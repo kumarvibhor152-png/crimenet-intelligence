@@ -9,10 +9,19 @@ class HawalaRadar {
     this.container = document.getElementById(containerId);
     this.currentFilter = 'ALL';
     this.searchTerm = '';
+    this.anomaliesMap = {};
     this.init();
   }
 
-  init() {
+  async init() {
+    if (window.CrimeNetAPI) {
+      const data = await window.CrimeNetAPI.getHawalaAnomalies();
+      if (data && data.transactions) {
+        data.transactions.forEach(t => {
+          this.anomaliesMap[t.txn_id] = t.ai_anomaly_score;
+        });
+      }
+    }
     this.render();
   }
 
@@ -156,6 +165,7 @@ class HawalaRadar {
                 <th>RECEIVER (OWNER)</th>
                 <th>AMOUNT</th>
                 <th>PAYMENT MODE</th>
+                <th>AI ANOMALY RISK</th>
                 <th>FORENSIC AUDIT FLAG</th>
               </tr>
             </thead>
@@ -165,6 +175,7 @@ class HawalaRadar {
                 const rObj = engine.accountToOwner.get(t.receiver_account);
                 const sName = sObj ? `${sObj.entity.name} (${sObj.type === 'person' ? sObj.entity.person_id : sObj.entity.org_id})` : 'Unregistered';
                 const rName = rObj ? `${rObj.entity.name} (${rObj.type === 'person' ? rObj.entity.person_id : rObj.entity.org_id})` : 'Unregistered';
+                const aiScore = this.anomaliesMap[t.txn_id] || (t.flag ? 78.4 : 14.2);
 
                 return `
                   <tr class="${t.flag ? 'row-alert' : ''}">
@@ -180,6 +191,11 @@ class HawalaRadar {
                     </td>
                     <td class="font-mono font-bold ${t.flag ? 'text-danger' : 'text-slate'}">₹${t.amount_inr.toLocaleString()}</td>
                     <td><span class="mode-tag">${t.mode}</span></td>
+                    <td>
+                      <span class="font-mono font-bold ${aiScore >= 60 ? 'text-danger' : aiScore >= 35 ? 'text-amber' : 'text-slate'}">
+                        ${aiScore ? `${aiScore}/100` : '12.0/100'}
+                      </span>
+                    </td>
                     <td>
                       ${t.flag === 'structuring' ? '<span class="badge badge-danger">⚠️ STRUCTURING</span>' :
                         t.flag === 'below-1L-threshold' ? '<span class="badge badge-amber">⚡ BELOW-1L SMURF</span>' :

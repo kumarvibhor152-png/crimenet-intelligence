@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTacticalClock();
   initAudioFeedback();
   initTabs();
+  initBackendConnection();
   initGlobalSearch();
   initOverviewTab();
   initSuspectDirectoryTab();
@@ -102,8 +103,47 @@ function initTabs() {
       if (targetTab === 'nlp' && !window.nlpEngineInstance) {
         window.nlpEngineInstance = new window.NLPEngine('nlpContainer');
       }
+
+      if (targetTab === 'aimodel' && !window.aiModelLabInstance) {
+        window.aiModelLabInstance = new window.AIModelLabView('aiModelLabContainer');
+        window.aiModelLabInstance.init();
+      }
     });
   });
+}
+
+// 3.5. Backend AI Connection & Suspect Enrichment
+async function initBackendConnection() {
+  const beacon = document.getElementById('backendStatusBeacon');
+  if (window.CrimeNetAPI) {
+    window.CrimeNetAPI.onStatusChange((status, details) => {
+      if (beacon) {
+        if (status === 'ONLINE') {
+          beacon.textContent = '● AI BACKEND ONLINE (PyTorch v2.9.1)';
+          beacon.className = 'badge-pulse-online font-mono text-xs';
+        } else {
+          beacon.textContent = '○ AI SIMULATOR (OFFLINE)';
+          beacon.className = 'badge-offline font-mono text-xs';
+        }
+      }
+    });
+
+    const health = await window.CrimeNetAPI.checkHealth();
+    if (health) {
+      const enriched = await window.CrimeNetAPI.getSuspects();
+      if (enriched && window.crimeDataEngine) {
+        enriched.forEach(es => {
+          const p = window.crimeDataEngine.personMap.get(es.person_id);
+          if (p) {
+            p.ai_predicted_role = es.ai_predicted_role;
+            p.ai_confidence = es.ai_confidence;
+            p.ai_threat_score = es.ai_threat_score;
+          }
+        });
+        initSuspectDirectoryTab();
+      }
+    }
+  }
 }
 
 // 4. Executive Overview Initializer
@@ -185,8 +225,8 @@ function initSuspectDirectoryTab() {
           <div class="suspect-card-body">
             <h4 class="suspect-name">${p.name}</h4>
             <div class="suspect-info-line">
-              <span class="text-muted">Syndicate Ring:</span>
-              <strong class="text-cyan">${p.ringRole}</strong>
+              <span class="text-muted">AI Role:</span>
+              <strong class="${(p.ai_predicted_role || '').includes('Kingpin') || (p.ai_predicted_role || '').includes('Linchpin') ? 'text-danger' : 'text-cyan'}">${p.ai_predicted_role || p.ringRole}</strong>
             </div>
             <div class="suspect-info-line">
               <span class="text-muted">Age / City:</span>

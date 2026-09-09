@@ -1,0 +1,614 @@
+[
+  {
+    "txn_id": "T8001",
+    "sender_account": "Bank of Baroda-334013073383",
+    "receiver_account": "Axis-203577948775",
+    "amount_inr": 58584,
+    "mode": "Cash Deposit",
+    "date": "2024-11-20",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8002",
+    "sender_account": "ICICI-545699699578",
+    "receiver_account": "Axis-203577948775",
+    "amount_inr": 76444,
+    "mode": "UPI",
+    "date": "2024-10-07",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8003",
+    "sender_account": "Axis-259961695156",
+    "receiver_account": "Axis-203577948775",
+    "amount_inr": 63860,
+    "mode": "NEFT",
+    "date": "2025-01-23",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8004",
+    "sender_account": "HDFC-643354278056",
+    "receiver_account": "Axis-203577948775",
+    "amount_inr": 70856,
+    "mode": "UPI",
+    "date": "2024-05-29",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8005",
+    "sender_account": "Bank of Baroda-227639372412",
+    "receiver_account": "Axis-203577948775",
+    "amount_inr": 64035,
+    "mode": "NEFT",
+    "date": "2024-10-21",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8006",
+    "sender_account": "ICICI-273665994394",
+    "receiver_account": "Axis-203577948775",
+    "amount_inr": 91801,
+    "mode": "NEFT",
+    "date": "2024-12-20",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8007",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "SBI-119199821669",
+    "amount_inr": 82989,
+    "mode": "UPI",
+    "date": "2025-05-05",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8008",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "Bank of Baroda-361399523052",
+    "amount_inr": 53242,
+    "mode": "RTGS",
+    "date": "2024-10-04",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8009",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "ICICI-406404422214",
+    "amount_inr": 85624,
+    "mode": "UPI",
+    "date": "2024-05-20",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8010",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "ICICI-273665994394",
+    "amount_inr": 80349,
+    "mode": "RTGS",
+    "date": "2024-09-02",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8011",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "ICICI-928623824187",
+    "amount_inr": 43326,
+    "mode": "RTGS",
+    "date": "2024-08-19",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8012",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "ICICI-922894448206",
+    "amount_inr": 55259,
+    "mode": "NEFT",
+    "date": "2024-04-12",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8013",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "Bank of Baroda-545809626678",
+    "amount_inr": 61646,
+    "mode": "Cash Deposit",
+    "date": "2024-04-12",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8014",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "ICICI-545699699578",
+    "amount_inr": 49009,
+    "mode": "NEFT",
+    "date": "2024-06-10",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8015",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "Bank of Baroda-545809626678",
+    "amount_inr": 82787,
+    "mode": "Cash Deposit",
+    "date": "2025-05-03",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8016",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "ICICI-922894448206",
+    "amount_inr": 53071,
+    "mode": "UPI",
+    "date": "2024-11-24",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8017",
+    "sender_account": "ICICI-273665994394",
+    "receiver_account": "Axis-203577948775",
+    "amount_inr": 88000,
+    "mode": "UPI",
+    "date": "2024-03-01",
+    "flag": "structuring"
+  },
+  {
+    "txn_id": "T8018",
+    "sender_account": "Axis-203577948775",
+    "receiver_account": "Bank of Baroda-464731933573",
+    "amount_inr": 35862,
+    "mode": "RTGS",
+    "date": "2024-08-25",
+    "flag": "below-1L-threshold"
+  },
+  {
+    "txn_id": "T8019",
+    "sender_account": "ICICI-406404422214",
+    "receiver_account": "Axis-466554516218",
+    "amount_inr": 47890,
+    "mode": "NEFT",
+    "date": "2024-06-28",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8020",
+    "sender_account": "Bank of Baroda-545809626678",
+    "receiver_account": "ICICI-584423393396",
+    "amount_inr": 12020,
+    "mode": "NEFT",
+    "date": "2025-02-10",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8021",
+    "sender_account": "PNB-425125927992",
+    "receiver_account": "Bank of Baroda-227639372412",
+    "amount_inr": 12710,
+    "mode": "UPI",
+    "date": "2024-02-08",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8022",
+    "sender_account": "HDFC-941629821539",
+    "receiver_account": "HDFC-462488651216",
+    "amount_inr": 37721,
+    "mode": "RTGS",
+    "date": "2024-04-19",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8023",
+    "sender_account": "Bank of Baroda-464731933573",
+    "receiver_account": "HDFC-462488651216",
+    "amount_inr": 30276,
+    "mode": "RTGS",
+    "date": "2025-06-20",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8024",
+    "sender_account": "Bank of Baroda-227639372412",
+    "receiver_account": "Bank of Baroda-334013073383",
+    "amount_inr": 56275,
+    "mode": "RTGS",
+    "date": "2025-04-24",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8025",
+    "sender_account": "Axis-110999011248",
+    "receiver_account": "Bank of Baroda-361399523052",
+    "amount_inr": 53506,
+    "mode": "NEFT",
+    "date": "2024-12-04",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8026",
+    "sender_account": "Axis-472494841003",
+    "receiver_account": "Axis-466554516218",
+    "amount_inr": 30575,
+    "mode": "UPI",
+    "date": "2024-07-09",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8027",
+    "sender_account": "HDFC-941629821539",
+    "receiver_account": "Axis-466554516218",
+    "amount_inr": 22592,
+    "mode": "UPI",
+    "date": "2024-07-16",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8028",
+    "sender_account": "Axis-472494841003",
+    "receiver_account": "SBI-160019139722",
+    "amount_inr": 56608,
+    "mode": "Cash Deposit",
+    "date": "2025-03-13",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8029",
+    "sender_account": "SBI-563210400205",
+    "receiver_account": "Bank of Baroda-464731933573",
+    "amount_inr": 6184,
+    "mode": "Cash Deposit",
+    "date": "2024-04-07",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8030",
+    "sender_account": "Axis-472494841003",
+    "receiver_account": "Bank of Baroda-334013073383",
+    "amount_inr": 31790,
+    "mode": "UPI",
+    "date": "2024-09-11",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8031",
+    "sender_account": "HDFC-941629821539",
+    "receiver_account": "Axis-110999011248",
+    "amount_inr": 25637,
+    "mode": "IMPS",
+    "date": "2025-04-02",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8032",
+    "sender_account": "SBI-799050464905",
+    "receiver_account": "Axis-110999011248",
+    "amount_inr": 22102,
+    "mode": "UPI",
+    "date": "2024-01-12",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8033",
+    "sender_account": "Axis-110999011248",
+    "receiver_account": "ICICI-922894448206",
+    "amount_inr": 24063,
+    "mode": "IMPS",
+    "date": "2024-03-04",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8034",
+    "sender_account": "ICICI-545699699578",
+    "receiver_account": "ICICI-273665994394",
+    "amount_inr": 31000,
+    "mode": "UPI",
+    "date": "2024-06-12",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8035",
+    "sender_account": "ICICI-613431605339",
+    "receiver_account": "ICICI-545699699578",
+    "amount_inr": 33433,
+    "mode": "UPI",
+    "date": "2024-04-30",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8036",
+    "sender_account": "ICICI-922894448206",
+    "receiver_account": "HDFC-462488651216",
+    "amount_inr": 24587,
+    "mode": "RTGS",
+    "date": "2024-08-14",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8037",
+    "sender_account": "ICICI-928623824187",
+    "receiver_account": "Bank of Baroda-334013073383",
+    "amount_inr": 31838,
+    "mode": "IMPS",
+    "date": "2025-04-10",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8038",
+    "sender_account": "Axis-466554516218",
+    "receiver_account": "SBI-160019139722",
+    "amount_inr": 24985,
+    "mode": "Cash Deposit",
+    "date": "2025-04-27",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8039",
+    "sender_account": "SBI-799050464905",
+    "receiver_account": "ICICI-406404422214",
+    "amount_inr": 53059,
+    "mode": "IMPS",
+    "date": "2024-09-10",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8040",
+    "sender_account": "ICICI-545699699578",
+    "receiver_account": "SBI-799050464905",
+    "amount_inr": 39547,
+    "mode": "NEFT",
+    "date": "2025-06-22",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8041",
+    "sender_account": "SBI-119199821669",
+    "receiver_account": "SBI-563210400205",
+    "amount_inr": 46622,
+    "mode": "UPI",
+    "date": "2024-03-20",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8042",
+    "sender_account": "ICICI-601234945339",
+    "receiver_account": "ICICI-273665994394",
+    "amount_inr": 4547,
+    "mode": "RTGS",
+    "date": "2025-06-01",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8043",
+    "sender_account": "Bank of Baroda-361399523052",
+    "receiver_account": "ICICI-601234945339",
+    "amount_inr": 35670,
+    "mode": "IMPS",
+    "date": "2024-06-17",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8044",
+    "sender_account": "Bank of Baroda-464731933573",
+    "receiver_account": "SBI-563210400205",
+    "amount_inr": 29456,
+    "mode": "NEFT",
+    "date": "2024-07-29",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8045",
+    "sender_account": "SBI-549048500534",
+    "receiver_account": "ICICI-601234945339",
+    "amount_inr": 32535,
+    "mode": "NEFT",
+    "date": "2025-06-06",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8046",
+    "sender_account": "SBI-119199821669",
+    "receiver_account": "PNB-425125927992",
+    "amount_inr": 4146,
+    "mode": "Cash Deposit",
+    "date": "2024-05-15",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8047",
+    "sender_account": "SBI-563210400205",
+    "receiver_account": "Bank of Baroda-545809626678",
+    "amount_inr": 30436,
+    "mode": "RTGS",
+    "date": "2024-02-29",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8048",
+    "sender_account": "ICICI-406404422214",
+    "receiver_account": "SBI-119199821669",
+    "amount_inr": 44590,
+    "mode": "UPI",
+    "date": "2024-01-23",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8049",
+    "sender_account": "ICICI-613431605339",
+    "receiver_account": "Axis-110999011248",
+    "amount_inr": 54007,
+    "mode": "NEFT",
+    "date": "2024-08-11",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8050",
+    "sender_account": "ICICI-601234945339",
+    "receiver_account": "HDFC-643354278056",
+    "amount_inr": 3468,
+    "mode": "Cash Deposit",
+    "date": "2024-12-18",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8051",
+    "sender_account": "SBI-549048500534",
+    "receiver_account": "HDFC-643354278056",
+    "amount_inr": 35965,
+    "mode": "NEFT",
+    "date": "2024-03-11",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8052",
+    "sender_account": "Bank of Baroda-227639372412",
+    "receiver_account": "Bank of Baroda-851347210313",
+    "amount_inr": 19314,
+    "mode": "Cash Deposit",
+    "date": "2024-07-03",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8053",
+    "sender_account": "SBI-799050464905",
+    "receiver_account": "Bank of Baroda-334013073383",
+    "amount_inr": 50689,
+    "mode": "Cash Deposit",
+    "date": "2025-01-18",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8054",
+    "sender_account": "ICICI-613431605339",
+    "receiver_account": "SBI-119199821669",
+    "amount_inr": 57491,
+    "mode": "Cash Deposit",
+    "date": "2025-01-19",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8055",
+    "sender_account": "HDFC-643354278056",
+    "receiver_account": "ICICI-545699699578",
+    "amount_inr": 43871,
+    "mode": "RTGS",
+    "date": "2024-05-16",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8056",
+    "sender_account": "ICICI-922894448206",
+    "receiver_account": "Axis-259961695156",
+    "amount_inr": 8274,
+    "mode": "IMPS",
+    "date": "2025-02-06",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8057",
+    "sender_account": "SBI-563210400205",
+    "receiver_account": "Bank of Baroda-334013073383",
+    "amount_inr": 48200,
+    "mode": "IMPS",
+    "date": "2024-01-04",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8058",
+    "sender_account": "SBI-799050464905",
+    "receiver_account": "HDFC-941629821539",
+    "amount_inr": 20053,
+    "mode": "Cash Deposit",
+    "date": "2025-03-10",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8059",
+    "sender_account": "ICICI-406404422214",
+    "receiver_account": "ICICI-613431605339",
+    "amount_inr": 54459,
+    "mode": "IMPS",
+    "date": "2024-09-10",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8060",
+    "sender_account": "SBI-119199821669",
+    "receiver_account": "Axis-259961695156",
+    "amount_inr": 10666,
+    "mode": "UPI",
+    "date": "2024-07-12",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8061",
+    "sender_account": "Axis-466554516218",
+    "receiver_account": "SBI-799050464905",
+    "amount_inr": 7895,
+    "mode": "NEFT",
+    "date": "2025-03-05",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8062",
+    "sender_account": "SBI-160019139722",
+    "receiver_account": "SBI-799050464905",
+    "amount_inr": 58417,
+    "mode": "NEFT",
+    "date": "2024-09-03",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8063",
+    "sender_account": "Bank of Baroda-361399523052",
+    "receiver_account": "HDFC-643354278056",
+    "amount_inr": 7112,
+    "mode": "RTGS",
+    "date": "2024-02-04",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8064",
+    "sender_account": "SBI-119199821669",
+    "receiver_account": "SBI-160019139722",
+    "amount_inr": 44541,
+    "mode": "NEFT",
+    "date": "2024-09-07",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8065",
+    "sender_account": "Axis-466554516218",
+    "receiver_account": "Bank of Baroda-851347210313",
+    "amount_inr": 26862,
+    "mode": "Cash Deposit",
+    "date": "2024-08-27",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8066",
+    "sender_account": "ICICI-406404422214",
+    "receiver_account": "Bank of Baroda-361399523052",
+    "amount_inr": 49939,
+    "mode": "NEFT",
+    "date": "2024-05-23",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8067",
+    "sender_account": "SBI-563210400205",
+    "receiver_account": "HDFC-462488651216",
+    "amount_inr": 15846,
+    "mode": "RTGS",
+    "date": "2024-11-22",
+    "flag": ""
+  },
+  {
+    "txn_id": "T8068",
+    "sender_account": "ICICI-601234945339",
+    "receiver_account": "SBI-160019139722",
+    "amount_inr": 51129,
+    "mode": "UPI",
+    "date": "2024-08-30",
+    "flag": ""
+  }
+]

@@ -47,6 +47,10 @@
         <span class="badge-pulse-danger">CRITICAL // ALPHA-9</span>
       </div>
       <div class="telemetry-item">
+        <span class="tele-label">AI MODEL ENGINE</span>
+        <span id="backendStatusBeacon" class="badge-pulse-online font-mono text-xs">● AI BACKEND ONLINE</span>
+      </div>
+      <div class="telemetry-item">
         <span class="tele-label">OFFICER BADGE</span>
         <span class="tele-val text-slate">INSP. V. SHARMA (CID-04)</span>
       </div>
@@ -76,6 +80,9 @@
     </button>
     <button class="nav-tab" data-tab="osint">
       <span>📱</span> OSINT SOCIAL INTELLIGENCE
+    </button>
+    <button class="nav-tab" data-tab="aimodel">
+      <span>🧠</span> AI MODEL & NEURAL PREDICTIONS
     </button>
     <button class="nav-tab" data-tab="nlp">
       <span>🤖</span> AI REPORT NER EXTRACTOR
@@ -348,6 +355,11 @@
       </div>
     </section>
 
+    <!-- AI Model Command & Inference Lab Tab -->
+    <section id="tab-aimodel" class="tab-view">
+      <div id="aiModelLabContainer"></div>
+    </section>
+
   </main>
 
   <!-- External Leaflet Library -->
@@ -355,11 +367,13 @@
 
   <!-- Internal Engine Scripts -->
   <script src="js/data.js"></script>
+  <script src="js/api-client.js"></script>
   <script src="js/graph-engine.js"></script>
   <script src="js/gis-map.js"></script>
   <script src="js/hawala-radar.js"></script>
   <script src="js/cdr-engine.js"></script>
   <script src="js/nlp-engine.js"></script>
+  <script src="js/ai-model-tab.js"></script>
   <script src="js/dossier-modal.js"></script>
   <script src="js/app.js"></script>
 

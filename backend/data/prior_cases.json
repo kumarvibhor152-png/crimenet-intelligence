@@ -1,0 +1,274 @@
+[
+  {
+    "person_id": "P003",
+    "name": "Ahmed Singh",
+    "fir_no": "FIR-686",
+    "section": "IPC 420 (Cheating)",
+    "year": 2022,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P003",
+    "name": "Ahmed Singh",
+    "fir_no": "FIR-803",
+    "section": "IPC 411 (Stolen Property)",
+    "year": 2019,
+    "status": "Convicted"
+  },
+  {
+    "person_id": "P004",
+    "name": "Kunal Khan",
+    "fir_no": "FIR-736",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2019,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P004",
+    "name": "Kunal Khan",
+    "fir_no": "FIR-908",
+    "section": "NDPS Act Sec 8/20 (Drugs)",
+    "year": 2023,
+    "status": "Convicted"
+  },
+  {
+    "person_id": "P004",
+    "name": "Kunal Khan",
+    "fir_no": "FIR-919",
+    "section": "IPC 120B (Criminal Conspiracy)",
+    "year": 2021,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P005",
+    "name": "Vivek Nair",
+    "fir_no": "FIR-655",
+    "section": "IPC 380 (Theft)",
+    "year": 2020,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P007",
+    "name": "Anil Gupta",
+    "fir_no": "FIR-537",
+    "section": "IPC 384 (Extortion)",
+    "year": 2022,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P007",
+    "name": "Anil Gupta",
+    "fir_no": "FIR-798",
+    "section": "IPC 384 (Extortion)",
+    "year": 2022,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P009",
+    "name": "Farhan Nair",
+    "fir_no": "FIR-859",
+    "section": "IPC 120B (Criminal Conspiracy)",
+    "year": 2022,
+    "status": "Convicted"
+  },
+  {
+    "person_id": "P009",
+    "name": "Farhan Nair",
+    "fir_no": "FIR-555",
+    "section": "IPC 120B (Criminal Conspiracy)",
+    "year": 2019,
+    "status": "Pending Trial"
+  },
+  {
+    "person_id": "P010",
+    "name": "Faisal Joshi",
+    "fir_no": "FIR-831",
+    "section": "IPC 411 (Stolen Property)",
+    "year": 2018,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P014",
+    "name": "Amit Verma",
+    "fir_no": "FIR-505",
+    "section": "IPC 420 (Cheating)",
+    "year": 2020,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P016",
+    "name": "Priya Pillai",
+    "fir_no": "FIR-785",
+    "section": "IPC 411 (Stolen Property)",
+    "year": 2023,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P016",
+    "name": "Priya Pillai",
+    "fir_no": "FIR-728",
+    "section": "NDPS Act Sec 8/20 (Drugs)",
+    "year": 2021,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P016",
+    "name": "Priya Pillai",
+    "fir_no": "FIR-895",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2022,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P018",
+    "name": "Zoya Nair",
+    "fir_no": "FIR-747",
+    "section": "IPC 420 (Cheating)",
+    "year": 2020,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P020",
+    "name": "Pooja Dutta",
+    "fir_no": "FIR-925",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2019,
+    "status": "Pending Trial"
+  },
+  {
+    "person_id": "P023",
+    "name": "Priya Khan",
+    "fir_no": "FIR-766",
+    "section": "IPC 384 (Extortion)",
+    "year": 2020,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P024",
+    "name": "Rahul Joshi",
+    "fir_no": "FIR-724",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2023,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P025",
+    "name": "Sunita Reddy",
+    "fir_no": "FIR-534",
+    "section": "NDPS Act Sec 8/20 (Drugs)",
+    "year": 2018,
+    "status": "Convicted"
+  },
+  {
+    "person_id": "P025",
+    "name": "Sunita Reddy",
+    "fir_no": "FIR-511",
+    "section": "IPC 120B (Criminal Conspiracy)",
+    "year": 2020,
+    "status": "Convicted"
+  },
+  {
+    "person_id": "P027",
+    "name": "Meena Dutta",
+    "fir_no": "FIR-976",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2019,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P029",
+    "name": "Ayesha Pillai",
+    "fir_no": "FIR-786",
+    "section": "IPC 384 (Extortion)",
+    "year": 2021,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P029",
+    "name": "Ayesha Pillai",
+    "fir_no": "FIR-908",
+    "section": "IPC 384 (Extortion)",
+    "year": 2023,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P030",
+    "name": "Anil Nair",
+    "fir_no": "FIR-827",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2021,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P031",
+    "name": "Sunita Joshi",
+    "fir_no": "FIR-814",
+    "section": "IPC 380 (Theft)",
+    "year": 2021,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P032",
+    "name": "Priya Rao",
+    "fir_no": "FIR-502",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2019,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P032",
+    "name": "Priya Rao",
+    "fir_no": "FIR-642",
+    "section": "IPC 120B (Criminal Conspiracy)",
+    "year": 2023,
+    "status": "Convicted"
+  },
+  {
+    "person_id": "P035",
+    "name": "Sunita Gupta",
+    "fir_no": "FIR-595",
+    "section": "NDPS Act Sec 8/20 (Drugs)",
+    "year": 2020,
+    "status": "Acquitted"
+  },
+  {
+    "person_id": "P035",
+    "name": "Sunita Gupta",
+    "fir_no": "FIR-734",
+    "section": "IPC 420 (Cheating)",
+    "year": 2020,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P035",
+    "name": "Sunita Gupta",
+    "fir_no": "FIR-770",
+    "section": "PMLA Sec 3 (Money Laundering)",
+    "year": 2020,
+    "status": "Absconding"
+  },
+  {
+    "person_id": "P040",
+    "name": "Faisal Iyer",
+    "fir_no": "FIR-588",
+    "section": "IPC 120B (Criminal Conspiracy)",
+    "year": 2023,
+    "status": "Pending Trial"
+  },
+  {
+    "person_id": "P040",
+    "name": "Faisal Iyer",
+    "fir_no": "FIR-970",
+    "section": "IPC 411 (Stolen Property)",
+    "year": 2022,
+    "status": "Convicted"
+  },
+  {
+    "person_id": "P040",
+    "name": "Faisal Iyer",
+    "fir_no": "FIR-844",
+    "section": "IPC 380 (Theft)",
+    "year": 2020,
+    "status": "Convicted"
+  }
+]

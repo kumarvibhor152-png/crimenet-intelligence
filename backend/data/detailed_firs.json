@@ -1,0 +1,210 @@
+[
+  {
+    "fir_no": "FIR-1001",
+    "date": "2024-04-03",
+    "police_station": "Lucknow Police Station",
+    "sections": "NDPS Act Sec 8/20 (Drugs)",
+    "complainant_id": "P008",
+    "accused_ids": [
+      "P030",
+      "P025"
+    ],
+    "location_city": "Lucknow",
+    "narrative": "On 22 Jan 2024, a tip-off led police to intercept a vehicle registered as KA0544CB1977 near Lucknow. Anil Nair was found in possession of contraband suspected to be narcotics. Phone records linked to 9120679740 show frequent contact with associates believed to be part of a wider trafficking network operating across Lucknow and neighbouring districts."
+  },
+  {
+    "fir_no": "FIR-1002",
+    "date": "2024-07-29",
+    "police_station": "Pune Police Station",
+    "sections": "NDPS Act Sec 8/20 (Drugs)",
+    "complainant_id": "P016",
+    "accused_ids": [
+      "P024"
+    ],
+    "location_city": "Pune",
+    "narrative": "On 31 Jul 2024, a tip-off led police to intercept a vehicle registered as UP3294FB9289 near Pune. Rahul Joshi was found in possession of contraband suspected to be narcotics. Phone records linked to 9319314919 show frequent contact with associates believed to be part of a wider trafficking network operating across Pune and neighbouring districts."
+  },
+  {
+    "fir_no": "FIR-1003",
+    "date": "2024-10-10",
+    "police_station": "Mumbai Police Station",
+    "sections": "NDPS Act Sec 8/20 (Drugs)",
+    "complainant_id": "P010",
+    "accused_ids": [
+      "P025",
+      "P004",
+      "P009"
+    ],
+    "location_city": "Mumbai",
+    "narrative": "On 13 May 2024, a tip-off led police to intercept a vehicle registered as MH0451CH4475 near Mumbai. Sunita Reddy was found in possession of contraband suspected to be narcotics. Phone records linked to 9284987769 show frequent contact with associates believed to be part of a wider trafficking network operating across Mumbai and neighbouring districts."
+  },
+  {
+    "fir_no": "FIR-1004",
+    "date": "2024-01-16",
+    "police_station": "Pune Police Station",
+    "sections": "IPC 120B (Criminal Conspiracy)",
+    "complainant_id": "P002",
+    "accused_ids": [
+      "P030",
+      "P009",
+      "P016"
+    ],
+    "location_city": "Pune",
+    "narrative": "On 31 Aug 2024, a tip-off led police to intercept a vehicle registered as KA0544CB1977 near Pune. Anil Nair was found in possession of contraband suspected to be narcotics. Phone records linked to 9120679740 show frequent contact with associates believed to be part of a wider trafficking network operating across Pune and neighbouring districts."
+  },
+  {
+    "fir_no": "FIR-1005",
+    "date": "2024-05-09",
+    "police_station": "Mumbai Police Station",
+    "sections": "IPC 120B (Criminal Conspiracy)",
+    "complainant_id": "P017",
+    "accused_ids": [
+      "P024",
+      "P016",
+      "P035"
+    ],
+    "location_city": "Mumbai",
+    "narrative": "On 22 Jun 2025, a tip-off led police to intercept a vehicle registered as UP3294FB9289 near Mumbai. Rahul Joshi was found in possession of contraband suspected to be narcotics. Phone records linked to 9319314919 show frequent contact with associates believed to be part of a wider trafficking network operating across Mumbai and neighbouring districts."
+  },
+  {
+    "fir_no": "FIR-1006",
+    "date": "2025-01-05",
+    "police_station": "Lucknow Police Station",
+    "sections": "NDPS Act Sec 8/20 (Drugs)",
+    "complainant_id": "P031",
+    "accused_ids": [
+      "P035"
+    ],
+    "location_city": "Lucknow",
+    "narrative": "On 07 Apr 2025, a tip-off led police to intercept a vehicle registered as GJ0522HB9617 near Lucknow. Sunita Gupta was found in possession of contraband suspected to be narcotics. Phone records linked to 9636057662 show frequent contact with associates believed to be part of a wider trafficking network operating across Lucknow and neighbouring districts."
+  },
+  {
+    "fir_no": "FIR-1007",
+    "date": "2025-04-14",
+    "police_station": "Bengaluru Police Station",
+    "sections": "IPC 420 (Cheating)",
+    "complainant_id": "P034",
+    "accused_ids": [
+      "P018",
+      "P007",
+      "P014"
+    ],
+    "location_city": "Bengaluru",
+    "narrative": "Complainant Sanjay Reddy reported a suspicious investment scheme promising high returns, coordinated by Zoya Nair through Shreeji Traders. Funds were routed through multiple bank accounts before being withdrawn in cash, suggesting a layering pattern consistent with money laundering."
+  },
+  {
+    "fir_no": "FIR-1008",
+    "date": "2025-03-30",
+    "police_station": "Lucknow Police Station",
+    "sections": "IPC 420 (Cheating)",
+    "complainant_id": "P007",
+    "accused_ids": [
+      "P029",
+      "P004"
+    ],
+    "location_city": "Lucknow",
+    "narrative": "Complainant Anil Gupta reported a suspicious investment scheme promising high returns, coordinated by Ayesha Pillai through Om Sai Logistics. Funds were routed through multiple bank accounts before being withdrawn in cash, suggesting a layering pattern consistent with money laundering."
+  },
+  {
+    "fir_no": "FIR-1009",
+    "date": "2024-11-28",
+    "police_station": "Bengaluru Police Station",
+    "sections": "PMLA Sec 3 (Money Laundering)",
+    "complainant_id": "P009",
+    "accused_ids": [
+      "P040",
+      "P032"
+    ],
+    "location_city": "Bengaluru",
+    "narrative": "Complainant Farhan Nair reported a suspicious investment scheme promising high returns, coordinated by Faisal Iyer through Sunrise Money Exchange. Funds were routed through multiple bank accounts before being withdrawn in cash, suggesting a layering pattern consistent with money laundering."
+  },
+  {
+    "fir_no": "FIR-1010",
+    "date": "2024-04-11",
+    "police_station": "Surat Police Station",
+    "sections": "IPC 420 (Cheating)",
+    "complainant_id": "P039",
+    "accused_ids": [
+      "P003",
+      "P023",
+      "P004"
+    ],
+    "location_city": "Surat",
+    "narrative": "Complainant Rekha Chatterjee reported a suspicious investment scheme promising high returns, coordinated by Ahmed Singh through Green Valley Agro. Funds were routed through multiple bank accounts before being withdrawn in cash, suggesting a layering pattern consistent with money laundering."
+  },
+  {
+    "fir_no": "FIR-1011",
+    "date": "2024-12-13",
+    "police_station": "Surat Police Station",
+    "sections": "PMLA Sec 3 (Money Laundering)",
+    "complainant_id": "P015",
+    "accused_ids": [
+      "P018",
+      "P029",
+      "P004"
+    ],
+    "location_city": "Surat",
+    "narrative": "Complainant Anita Kapoor reported a suspicious investment scheme promising high returns, coordinated by Zoya Nair through Star Financial Consultants. Funds were routed through multiple bank accounts before being withdrawn in cash, suggesting a layering pattern consistent with money laundering."
+  },
+  {
+    "fir_no": "FIR-1012",
+    "date": "2024-09-18",
+    "police_station": "Nagpur Police Station",
+    "sections": "PMLA Sec 3 (Money Laundering)",
+    "complainant_id": "P028",
+    "accused_ids": [
+      "P032",
+      "P014"
+    ],
+    "location_city": "Nagpur",
+    "narrative": "Complainant Rahul Chauhan reported a suspicious investment scheme promising high returns, coordinated by Priya Rao through Kaveri Exports Pvt Ltd. Funds were routed through multiple bank accounts before being withdrawn in cash, suggesting a layering pattern consistent with money laundering."
+  },
+  {
+    "fir_no": "FIR-1013",
+    "date": "2024-03-28",
+    "police_station": "Delhi Police Station",
+    "sections": "IPC 420 (Cheating)",
+    "complainant_id": "P005",
+    "accused_ids": [
+      "P031"
+    ],
+    "location_city": "Delhi",
+    "narrative": "Routine complaint of theft filed by Vivek Nair against Sunita Joshi."
+  },
+  {
+    "fir_no": "FIR-1014",
+    "date": "2024-05-13",
+    "police_station": "Nagpur Police Station",
+    "sections": "IPC 411 (Stolen Property)",
+    "complainant_id": "P007",
+    "accused_ids": [
+      "P028"
+    ],
+    "location_city": "Nagpur",
+    "narrative": "Routine complaint of theft filed by Anil Gupta against Rahul Chauhan."
+  },
+  {
+    "fir_no": "FIR-1015",
+    "date": "2024-05-05",
+    "police_station": "Nagpur Police Station",
+    "sections": "IPC 384 (Extortion)",
+    "complainant_id": "P038",
+    "accused_ids": [
+      "P004"
+    ],
+    "location_city": "Nagpur",
+    "narrative": "Routine complaint of theft filed by Anita Bhatt against Kunal Khan."
+  },
+  {
+    "fir_no": "FIR-1016",
+    "date": "2024-10-21",
+    "police_station": "Mumbai Police Station",
+    "sections": "IPC 411 (Stolen Property)",
+    "complainant_id": "P028",
+    "accused_ids": [
+      "P023"
+    ],
+    "location_city": "Mumbai",
+    "narrative": "Routine complaint of theft filed by Rahul Chauhan against Priya Khan."
+  }
+]

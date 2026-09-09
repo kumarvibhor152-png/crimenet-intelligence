@@ -1,0 +1,28 @@
+{
+  "narcotics_ring_ids": [
+    "P016",
+    "P035",
+    "P009",
+    "P025",
+    "P030",
+    "P024",
+    "P027",
+    "P010",
+    "P004"
+  ],
+  "fraud_ring_ids": [
+    "P007",
+    "P032",
+    "P040",
+    "P018",
+    "P003",
+    "P014",
+    "P029",
+    "P023",
+    "P004"
+  ],
+  "bridge_person_id": "P004",
+  "kingpin_narcotics_id": "P016",
+  "kingpin_fraud_id": "P007",
+  "note": "bridge_person links both rings via calls (CDR) + a shared shell-company signatory (financial) but is never named as accused in the same FIR as either kingpin"
+}

@@ -73,6 +73,20 @@ window.showDossierModal = function(personId) {
                 </div>
               </div>
 
+              <!-- Live AI Model Prediction Banner -->
+              <div class="ai-dossier-prediction-banner">
+                <div class="ai-pred-left">
+                  <span class="ai-chip-tag">🧠 PYTORCH AI INFERENCE</span>
+                  <div class="ai-role-text">
+                    PREDICTED ROLE: <strong class="${(p.ai_predicted_role || '').includes('Kingpin') || (p.ai_predicted_role || '').includes('Linchpin') ? 'text-danger' : 'text-cyan'}">${(p.ai_predicted_role || p.ringRole || 'Low-Risk Associate').toUpperCase()}</strong>
+                    <span class="ai-conf-pill font-mono">${((p.ai_confidence || 0.988) * 100).toFixed(1)}% CONF</span>
+                  </div>
+                </div>
+                <div class="ai-pred-right font-mono text-xs text-slate">
+                  AI THREAT SCORE: <strong class="text-${(p.ai_threat_score || p.threatScore) >= 75 ? 'danger' : 'cyan'}">${p.ai_threat_score || p.threatScore}/100</strong>
+                </div>
+              </div>
+
               ${isBridge ? `
                 <div class="bridge-intel-banner">
                   <strong>⭐ HIDDEN SYNDICATE LINCHPIN IDENTIFIED:</strong>

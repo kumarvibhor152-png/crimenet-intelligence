@@ -1,0 +1,62 @@
+[
+  {
+    "org_id": "O01",
+    "name": "Shreeji Traders",
+    "registered_city": "Nagpur",
+    "account_no": "SBI-537187650084"
+  },
+  {
+    "org_id": "O02",
+    "name": "Om Sai Logistics",
+    "registered_city": "Mumbai",
+    "account_no": "ICICI-235448546713"
+  },
+  {
+    "org_id": "O03",
+    "name": "Kaveri Exports Pvt Ltd",
+    "registered_city": "Lucknow",
+    "account_no": "ICICI-923228529421"
+  },
+  {
+    "org_id": "O04",
+    "name": "Falcon Freight Services",
+    "registered_city": "Bengaluru",
+    "account_no": "PNB-217559584131"
+  },
+  {
+    "org_id": "O05",
+    "name": "Bluewave Enterprises",
+    "registered_city": "Hyderabad",
+    "account_no": "Axis-778712312814"
+  },
+  {
+    "org_id": "O06",
+    "name": "Nandini Textiles",
+    "registered_city": "Nagpur",
+    "account_no": "PNB-809620368716"
+  },
+  {
+    "org_id": "O07",
+    "name": "Star Financial Consultants",
+    "registered_city": "Delhi",
+    "account_no": "Bank of Baroda-610344572728"
+  },
+  {
+    "org_id": "O08",
+    "name": "Reliable Cargo Movers",
+    "registered_city": "Bengaluru",
+    "account_no": "Bank of Baroda-226307668955"
+  },
+  {
+    "org_id": "O09",
+    "name": "Green Valley Agro",
+    "registered_city": "Pune",
+    "account_no": "SBI-142718868029"
+  },
+  {
+    "org_id": "O10",
+    "name": "Sunrise Money Exchange",
+    "registered_city": "Bengaluru",
+    "account_no": "Axis-203577948775"
+  }
+]
