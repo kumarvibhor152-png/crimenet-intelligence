@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRISHTI-CRIMENEXUS // Police-Grade AI Criminal Network & Intelligence Command</title>
+  
+  <!-- SEO & Law Enforcement Metadata -->
+  <meta name="description" content="AI-Powered Criminal Network & Syndicate Analyzer for Law Enforcement Agencies. Advanced graph analytics, geospatial CDR tracking, hawala money laundering radar, physical surveillance reports, and OSINT social intelligence.">
+  <meta name="theme-color" content="#080c16">
+  
+  <!-- Leaflet CSS for Tactical GIS Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Master Tactical Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Tactical Command Header -->
+  <header class="command-header">
+    <div class="header-agency-brand">
+      <div class="agency-emblem">🇮🇳</div>
+      <div class="agency-titles">
+        <h1>DRISHTI • CRIMENEXUS</h1>
+        <div class="agency-sub">SPECIAL OPERATIONS CYBER-INTELLIGENCE COMMAND // JURISDICTION: NATIONAL</div>
+      </div>
+    </div>
+
+    <!-- Global Omnisearch Bar -->
+    <div class="header-search-bar">
+      <div class="omni-input-wrap">
+        <span class="omni-icon">🔎</span>
+        <input type="text" id="globalOmniSearch" class="omni-search-input" placeholder="Search Suspect, Vehicle, Account, Phone, FIR..." autocomplete="off">
+      </div>
+      <div id="omniSearchResults" class="omni-results-dropdown"></div>
+    </div>
+
+    <!-- Live Telemetry & Officer Credentials -->
+    <div class="header-telemetry">
+      <div class="telemetry-item">
+        <span class="tele-label">SYSTEM TIME (IST)</span>
+        <span id="tacticalClock" class="tele-val text-cyan">2026-09-05 22:35:00 IST</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="tele-label">THREAT POSTURE</span>
+        <span class="badge-pulse-danger">CRITICAL // ALPHA-9</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="tele-label">OFFICER BADGE</span>
+        <span class="tele-val text-slate">INSP. V. SHARMA (CID-04)</span>
+      </div>
+      <button id="toggleSoundBtn" class="btn btn-xs btn-outline-cyan active" title="Toggle Tactical SFX">🔊 SFX ON</button>
+    </div>
+  </header>
+
+  <!-- Tactical Navigation Tab Bar -->
+  <nav class="tactical-navbar">
+    <button class="nav-tab active" data-tab="overview">
+      <span>🛡️</span> EXECUTIVE INTEL OVERVIEW
+    </button>
+    <button class="nav-tab" data-tab="graph">
+      <span>🕸️</span> RELATIONSHIP GRAPH & INFLUENCERS
+    </button>
+    <button class="nav-tab" data-tab="gis">
+      <span>📍</span> TACTICAL GIS & SURVEILLANCE
+    </button>
+    <button class="nav-tab" data-tab="hawala">
+      <span>💸</span> HAWALA & SMURFING RADAR
+    </button>
+    <button class="nav-tab" data-tab="cdr">
+      <span>📞</span> CDR FORENSICS & BURNER BURSTS
+    </button>
+    <button class="nav-tab" data-tab="surveillance">
+      <span>👁️</span> PHYSICAL SURVEILLANCE LOGS
+    </button>
+    <button class="nav-tab" data-tab="osint">
+      <span>📱</span> OSINT SOCIAL INTELLIGENCE
+    </button>
+    <button class="nav-tab" data-tab="nlp">
+      <span>🤖</span> AI REPORT NER EXTRACTOR
+    </button>
+    <button class="nav-tab" data-tab="dossiers">
+      <span>📂</span> SUSPECT REGISTRY (40)
+    </button>
+  </nav>
+
+  <!-- Main Viewport Area -->
+  <main class="app-viewport">
+
+    <!-- 1. Executive Intel Overview Tab -->
+    <section id="tab-overview" class="tab-view active">
+      
+      <!-- Critical Ground Truth Revelation Banner -->
+      <div class="bridge-hero-banner">
+        <div class="bridge-hero-content">
+          <h3>⭐ SYNDICATE STRUCTURE DISCOVERY: DUAL-RING ARCHITECTURE & HIDDEN LINCHPIN</h3>
+          <p>
+            DRISHTI Graph Intelligence has uncovered that the criminal network operates as two distinct specialized cartels: 
+            a <strong>9-Member Narcotics Trafficking Ring</strong> (led by Kingpin <strong>Priya Pillai - P016</strong>) and a 
+            <strong>9-Member Financial Fraud & Extortion Ring</strong> (led by Kingpin <strong>Anil Gupta - P007</strong>). 
+            <br>
+            <strong>The Hidden Connection:</strong> <strong>Kunal Khan (P004)</strong> links both cartels via telecom CDRs and Hawala accounts. 
+            He was <em>never named as co-accused in the same FIR as either kingpin</em>, but surveillance logs <strong>SR3019</strong> (parked outside P016's residence) 
+            and <strong>SR3020</strong> (outside Sunrise Money Exchange with P007) establish him as the ultimate covert bridge.
+          </p>
+        </div>
+        <div class="bridge-hero-actions">
+          <button class="btn btn-pink" onclick="document.querySelector('[data-tab=\'graph\']').click()">
+            🕸️ View Dual-Ring Link Graph
+          </button>
+        </div>
+      </div>
+
+      <!-- High-Level Metrics Grid -->
+      <div class="hawala-grid">
+        <div class="intel-stat-card border-danger">
+          <div class="stat-label">MONITORED SUBJECTS OF INTEREST</div>
+          <div class="stat-value text-danger">40 PERSONS</div>
+          <div class="stat-meta">10 Active Absconding Fugitives</div>
+        </div>
+        <div class="intel-stat-card border-pink">
+          <div class="stat-label">COVERT DUAL-RING BRIDGE</div>
+          <div class="stat-value text-pink">P004 (KUNAL KHAN)</div>
+          <div class="stat-meta">Links Narcotics (P016) & Fraud (P007)</div>
+        </div>
+        <div class="intel-stat-card border-amber">
+          <div class="stat-label">PHYSICAL SURVEILLANCE LOGS</div>
+          <div class="stat-value text-amber">20 INTERCEPTS</div>
+          <div class="stat-meta">Corroborates Rendezvous across 8 Cities</div>
+        </div>
+        <div class="intel-stat-card border-purple">
+          <div class="stat-label">OSINT SOCIAL MEDIA POSTS</div>
+          <div class="stat-value text-purple">58 INTERCEPTS</div>
+          <div class="stat-meta">Coded Shipments & Money Broadcasts</div>
+        </div>
+      </div>
+
+      <!-- Split Layout: Key Influencers & Active Threat Patterns -->
+      <div class="overview-grid">
+        <!-- Key Influencers Panel -->
+        <div class="panel-section">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="icon">👑</span> KEY SYNDICATE INFLUENCERS (GRAPH CENTRALITY RANKING)
+            </div>
+            <span class="badge badge-cyan">AI RANKED</span>
+          </div>
+          <div id="keyInfluencersList" class="influencers-wrapper"></div>
+        </div>
+
+        <!-- Suspicious Pattern Alerts Panel -->
+        <div class="panel-section">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span class="icon">🚨</span> REAL-TIME DETECTED ANOMALY & PATTERN ALERTS
+            </div>
+            <span class="badge badge-danger">5 ACTIVE PATTERNS</span>
+          </div>
+          <div id="suspiciousPatternsList" class="patterns-wrapper"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Relationship Graph Tab -->
+    <section id="tab-graph" class="tab-view">
+      <div class="graph-workspace">
+        <canvas id="graphCanvas" class="graph-canvas"></canvas>
+
+        <!-- Floating Controls Panel -->
+        <div class="graph-floating-controls">
+          <div class="control-row">
+            <label>SYNDICATE HIGHLIGHT MODE:</label>
+            <button class="btn btn-sm btn-pink w-100" onclick="if(window.graphInstance) window.graphInstance.toggleDualRings()">
+              ⭐ Toggle Dual-Ring & Bridge View
+            </button>
+          </div>
+
+          <div class="control-row">
+            <label>NODE SIZE METRIC (AI CENTRALITY):</label>
+            <select id="graphCentralityMetric" class="tactical-select">
+              <option value="betweenness" selected>Betweenness Centrality (Brokers)</option>
+              <option value="degree">Degree Centrality (Volume)</option>
+              <option value="pagerank">PageRank (Influential)</option>
+              <option value="threat">Threat Score (Risk Level)</option>
+            </select>
+          </div>
+
+          <div class="control-row">
+            <label>FILTER BY STATUS:</label>
+            <select id="graphStatusFilter" class="tactical-select">
+              <option value="ALL" selected>All Suspects (40)</option>
+              <option value="ABSCONDING">Absconding Fugitives Only</option>
+              <option value="CONVICTED">Convicted Operatives Only</option>
+              <option value="PENDING">Under Trial Only</option>
+            </select>
+          </div>
+
+          <div class="control-row mt-2">
+            <button class="btn btn-sm btn-outline-cyan" onclick="if(window.graphInstance) window.graphInstance.resetView()">
+              🎯 Reset Graph Camera
+            </button>
+          </div>
+        </div>
+
+        <!-- Shortest Path Finder Widget -->
+        <div class="pathfinder-widget">
+          <div class="panel-title text-xs">
+            <span>⚡</span> TRACE SYNDICATE CONNECTION PATH
+          </div>
+          <div class="path-select-grid">
+            <select id="pathSourceSelect" class="tactical-select"></select>
+            <select id="pathTargetSelect" class="tactical-select"></select>
+            <button id="runPathFinderBtn" class="btn btn-sm btn-cyan">Trace</button>
+          </div>
+          <div id="pathResultBox" class="path-result-box">
+            Select two suspects to compute the exact communication & financial intermediary hops.
+          </div>
+        </div>
+
+        <!-- Node Inspector Sidebar -->
+        <div id="graphInspectorPanel" class="graph-inspector-panel">
+          <div class="inspector-card text-center text-muted text-xs">
+            Click on any node in the graph to inspect tactical dossier, telemetry, and criminal connections.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Tactical GIS Tab -->
+    <section id="tab-gis" class="tab-view">
+      <div class="panel-section">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="icon">📍</span> GEOSPATIAL CRIME, TOWER RADAR & SURVEILLANCE RENDEZVOUS
+          </div>
+          <div class="panel-controls">
+            <button class="btn btn-sm btn-outline-cyan" onclick="if(window.gisMapInstance) window.gisMapInstance.resetView()">
+              🇮🇳 Center India View
+            </button>
+          </div>
+        </div>
+        <div class="gis-workspace">
+          <div id="gisMapContainer" class="gis-map-canvas"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Hawala & Smurfing Radar Tab -->
+    <section id="tab-hawala" class="tab-view">
+      <div id="hawalaContainer"></div>
+    </section>
+
+    <!-- 5. CDR Telecommunication Forensics Tab -->
+    <section id="tab-cdr" class="tab-view">
+      <div id="cdrContainer"></div>
+    </section>
+
+    <!-- 6. Physical Surveillance Logs Tab -->
+    <section id="tab-surveillance" class="tab-view">
+      <div class="panel-section">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="icon">👁️</span> PHYSICAL FIELD SURVEILLANCE INTERCEPT LOGS (SR3001 - SR3020)
+          </div>
+          <div class="ledger-filters">
+            <input type="text" id="surveillanceSearchInput" placeholder="Filter by City, Subject, Vehicle..." class="ledger-search" oninput="window.filterSurveillanceLogs(this.value)">
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="tactical-table">
+            <thead>
+              <tr>
+                <th>REPORT ID</th>
+                <th>DATE</th>
+                <th>LOCATION</th>
+                <th>SUBJECT (NAME)</th>
+                <th>VEHICLE OBSERVED</th>
+                <th>ACCOMPLICES / CONTACTS</th>
+                <th>OPERATIONAL FIELD NOTES</th>
+              </tr>
+            </thead>
+            <tbody id="surveillanceTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. OSINT Social Intelligence Tab -->
+    <section id="tab-osint" class="tab-view">
+      <div class="panel-section">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="icon">📱</span> OSINT SOCIAL MEDIA UNDERGROUND MONITORING (58 INTERCEPTS)
+          </div>
+          <div class="ledger-filters">
+            <button class="btn-filter active" onclick="window.filterOSINT('ALL')">All Platforms</button>
+            <button class="btn-filter" onclick="window.filterOSINT('Instagram')">Instagram</button>
+            <button class="btn-filter" onclick="window.filterOSINT('Telegram')">Telegram</button>
+            <button class="btn-filter" onclick="window.filterOSINT('X')">X (Twitter)</button>
+            <button class="btn-filter" onclick="window.filterOSINT('WhatsApp')">WhatsApp</button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="tactical-table">
+            <thead>
+              <tr>
+                <th>POST ID</th>
+                <th>PLATFORM</th>
+                <th>HANDLE</th>
+                <th>SUBJECT</th>
+                <th>DATE</th>
+                <th>INTERCEPTED POST TEXT</th>
+                <th>MENTIONS (ASSOCIATE)</th>
+              </tr>
+            </thead>
+            <tbody id="osintTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. AI / NLP Report Extractor Tab -->
+    <section id="tab-nlp" class="tab-view">
+      <div id="nlpContainer"></div>
+    </section>
+
+    <!-- 9. Suspect Registry & Case Dossiers Tab -->
+    <section id="tab-dossiers" class="tab-view">
+      <div class="panel-section">
+        <div class="panel-header">
+          <div class="panel-title">
+            <span class="icon">📂</span> CENTRAL SUSPECT INTELLIGENCE REGISTRY (40 SUBJECTS)
+          </div>
+          <div class="ledger-filters">
+            <select id="suspectStatusFilter" class="tactical-select">
+              <option value="ALL">All Statuses</option>
+              <option value="ABSCONDING">Absconding Fugitives Only</option>
+              <option value="CONVICTED">Convicted Criminals</option>
+              <option value="UNDER_TRIAL">Under Trial / Pending</option>
+            </select>
+            <input type="text" id="suspectFilterInput" placeholder="Filter suspects by Name, City, Phone..." class="ledger-search">
+          </div>
+        </div>
+        <div style="padding: 1.25rem;">
+          <div id="suspectDirectoryGrid" class="directory-grid"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- External Leaflet Library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Internal Engine Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/graph-engine.js"></script>
+  <script src="js/gis-map.js"></script>
+  <script src="js/hawala-radar.js"></script>
+  <script src="js/cdr-engine.js"></script>
+  <script src="js/nlp-engine.js"></script>
+  <script src="js/dossier-modal.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
