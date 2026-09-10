@@ -467,10 +467,23 @@ function initGlobalSearch() {
     }
 
     const engine = window.crimeDataEngine;
-    const matches = engine.search(q).slice(0, 6);
+    const matches = engine.search(q).slice(0, 5);
+    const cleanQ = q.replace(/["']/g, '');
+
+    let html = `
+      <div class="omni-result-item omni-ai-item" onclick="if(window.suspectDigger){window.suspectDigger.executeAiQuestion('${cleanQ}');} document.getElementById('omniSearchResults').classList.remove('active');">
+        <div class="omni-item-top">
+          <strong class="text-cyan">Ask CrimeNet AI Copilot:</strong> "${cleanQ}"
+          <span class="badge badge-secondary font-mono text-xs">AI Analysis</span>
+        </div>
+        <div class="omni-item-sub text-xs text-muted">
+          Synthesize relation nexuses, hawala trails, nocturnal calls &amp; chargesheets
+        </div>
+      </div>
+    `;
 
     if (matches.length > 0) {
-      resultsDropdown.innerHTML = matches.map(m => `
+      html += matches.map(m => `
         <div class="omni-result-item" onclick="if(window.suspectDigger){window.suspectDigger.selectSuspect('${m.person_id}');}else{window.showDossierModal('${m.person_id}');} document.getElementById('omniSearchResults').classList.remove('active');">
           <div class="omni-item-top">
             <strong>${m.name}</strong> <span class="font-mono text-cyan">(${m.person_id})</span>
@@ -482,10 +495,29 @@ function initGlobalSearch() {
           </div>
         </div>
       `).join('');
-      resultsDropdown.classList.add('active');
-    } else {
-      resultsDropdown.innerHTML = `<div class="omni-no-match">No records matched "${q}"</div>`;
-      resultsDropdown.classList.add('active');
+    }
+
+    resultsDropdown.innerHTML = html;
+    resultsDropdown.classList.add('active');
+  });
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const q = searchInput.value.trim();
+      if (!q) return;
+      resultsDropdown.classList.remove('active');
+      if (window.suspectDigger) {
+        if (window.suspectDigger.isQuestionQuery(q)) {
+          window.suspectDigger.executeAiQuestion(q);
+        } else {
+          const matches = window.suspectDigger.querySuspects(q);
+          if (matches.length > 0) {
+            window.suspectDigger.selectSuspect(matches[0].person_id);
+          } else {
+            window.suspectDigger.executeAiQuestion(q);
+          }
+        }
+      }
     }
   });
 
