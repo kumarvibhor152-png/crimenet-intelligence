@@ -41,7 +41,7 @@ class SuspectDigger {
                 <polygon points="12 6 13.8 10.2 18 12 13.8 13.8 12 18 10.2 13.8 6 12 10.2 10.2 12 6"/>
               </svg>
             </div>
-            <h1 class="google-title">CrimeNet AI Analysis</h1>
+            <h1 class="google-title">Suraksha Sutra AI Analysis</h1>
             <p class="google-subtitle">Ask natural language investigative questions or search suspects, transactions, phone numbers, and FIR records</p>
           </div>
 
@@ -72,7 +72,7 @@ class SuspectDigger {
           <!-- Quick Query Target Chips -->
           <div class="quick-chips-zone">
             <div class="chips-group mb-2">
-              <span class="chips-label">Ask CrimeNet AI Copilot:</span>
+              <span class="chips-label">Ask Suraksha Sutra AI Copilot:</span>
               <div class="chips-list">
                 <button class="chip chip-copilot" onclick="window.suspectDigger.executeAiQuestion('What is the relation between Kunal Khan, Priya Pillai, and Anil Gupta?')">
                   <span class="chip-dot dot-copilot"></span>
@@ -209,7 +209,7 @@ class SuspectDigger {
             </svg>
           </div>
           <div class="ac-ai-body">
-            <div class="ac-ai-title">Ask CrimeNet AI Copilot: <span class="highlight-q">"${cleanQ}"</span></div>
+            <div class="ac-ai-title">Ask Suraksha Sutra AI Copilot: <span class="highlight-q">"${cleanQ}"</span></div>
             <div class="ac-ai-subtitle">Synthesize telecom, hawala, surveillance & chargesheets</div>
           </div>
           <div class="ac-ai-badge">AI Analysis ↵</div>
@@ -1119,7 +1119,7 @@ class SuspectDigger {
     // CASE E: SYNDICATE / CARTEL OVERVIEW
     // =========================================================================
     return {
-      title: "CrimeNet Syndicate Synthesis: Structural Breakdown & Cartel Architecture",
+      title: "Suraksha Sutra Syndicate Synthesis: Structural Breakdown & Cartel Architecture",
       threatTag: "CRITICAL SYNDICATE",
       threatLevelClass: "tag-critical",
       corroborationText: "Full Corpus: 40 suspects • 122 CDRs • 68 Hawala Txns • 20 Surveillance Sightings • 16 FIRs",
@@ -1220,7 +1220,7 @@ class SuspectDigger {
                   <circle cx="12" cy="12" r="10"/>
                   <polygon points="12 6 13.8 10.2 18 12 13.8 13.8 12 18 10.2 13.8 6 12 10.2 10.2 12 6"/>
                 </svg>
-                CRIMENET AI COPILOT // INVESTIGATIVE SYNTHESIS
+                SURAKSHA SUTRA AI COPILOT // INVESTIGATIVE SYNTHESIS
               </span>
               <span class="copilot-threat-tag ${res.threatLevelClass || 'tag-critical'}">${res.threatTag || 'HIGH CONFIDENCE'}</span>
             </div>

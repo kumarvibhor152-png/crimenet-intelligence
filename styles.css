@@ -1,32 +1,34 @@
 /**
- * DRISHTI-CRIMENEXUS TACTICAL LAW ENFORCEMENT STYLESHEET
- * Premium dark mode, cyber-intelligence telemetry, glassmorphic HUD,
- * dual-ring criminal network colorations, and high-contrast alert states.
+ * SURAKSHA SUTRA // LAW ENFORCEMENT INTELLIGENCE COMMAND
+ * Official Rashtriya Raksha University (RRU) Off-White Design System
+ * Clean, high-contrast, executive-grade law enforcement interface.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-card: #161b22;
-  --bg-card-hover: #1c2128;
-  --border-subtle: #30363d;
-  --border-glow-cyan: rgba(88, 166, 255, 0.25);
-  --border-glow-danger: rgba(248, 81, 73, 0.25);
+  --bg-primary: #f6f8fa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f3f6f9;
+  --bg-inset: #eef2f6;
+  --border-subtle: #d0d7de;
+  --border-light: #e1e4e8;
+  --border-glow-cyan: rgba(9, 105, 218, 0.2);
+  --border-glow-danger: rgba(207, 34, 46, 0.2);
 
-  --accent-cyan: #58a6ff;
-  --accent-cyan-hover: #79b8ff;
-  --accent-danger: #f85149;
-  --accent-danger-hover: #ff7b72;
-  --accent-amber: #d29922;
-  --accent-emerald: #3fb950;
-  --accent-purple: #bc8cff;
-  --accent-pink: #f85149;
+  --accent-cyan: #0969da; /* RRU Royal Blue */
+  --accent-cyan-hover: #0756b2;
+  --accent-danger: #cf222e;
+  --accent-danger-hover: #a40e26;
+  --accent-amber: #9a6700;
+  --accent-emerald: #1a7f37;
+  --accent-purple: #8250df;
+  --accent-pink: #bf3989;
 
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
-  --text-muted: #6e7681;
+  --text-primary: #1f2328;
+  --text-secondary: #57606a;
+  --text-muted: #6e7781;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
@@ -34,7 +36,9 @@
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
-  --shadow-hud: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-hud: 0 4px 16px rgba(31, 35, 40, 0.08);
+  --shadow-card: 0 1px 3px rgba(31, 35, 40, 0.08), 0 8px 24px rgba(31, 35, 40, 0.04);
+  --shadow-modal: 0 12px 32px rgba(31, 35, 40, 0.16);
 }
 
 * {
@@ -61,11 +65,11 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #21262d;
+  background: #d0d7de;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #30363d;
+  background: #afb8c1;
 }
 
 /* Tactical Vector Icons */
@@ -116,7 +120,7 @@ body {
 
 /* Top Command Bar */
 .command-header {
-  background: #161b22;
+  background: #ffffff;
   border-bottom: 1px solid var(--border-subtle);
   padding: 0.65rem 1.5rem;
   display: flex;
@@ -125,22 +129,48 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.05);
 }
 
 .header-agency-brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .agency-emblem {
-  font-size: 1.5rem;
-  filter: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agency-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.login-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 52px;
+  object-fit: contain;
+  display: block;
+}
+
+.auth-card-logo {
+  height: 54px;
+  width: auto;
+  max-width: 68px;
+  object-fit: contain;
+  display: block;
 }
 
 .agency-titles h1 {
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   background: none;
@@ -177,7 +207,7 @@ body {
 
 .omni-search-input {
   width: 100%;
-  background: #0d1117;
+  background: #f6f8fa;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 0.45rem 0.75rem 0.45rem 2.25rem;
@@ -188,8 +218,9 @@ body {
 
 .omni-search-input:focus {
   outline: none;
+  background: #ffffff;
   border-color: var(--accent-cyan);
-  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
 }
 
 .omni-results-dropdown {
@@ -197,10 +228,10 @@ body {
   top: calc(100% + 6px);
   left: 0;
   width: 100%;
-  background: #161b22;
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 24px rgba(31, 35, 40, 0.12);
   max-height: 380px;
   overflow-y: auto;
   display: none;
@@ -213,13 +244,13 @@ body {
 
 .omni-result-item {
   padding: 0.65rem 0.875rem;
-  border-bottom: 1px solid #21262d;
+  border-bottom: 1px solid #eef2f6;
   cursor: pointer;
   transition: background 0.15s ease;
 }
 
 .omni-result-item:hover {
-  background: rgba(88, 166, 255, 0.08);
+  background: #f6f8fa;
 }
 
 .omni-no-match {
@@ -269,7 +300,7 @@ body {
 
 /* Tactical Navigation Tabs */
 .tactical-navbar {
-  background: #161b22;
+  background: #ffffff;
   border-bottom: 1px solid var(--border-subtle);
   padding: 0.25rem 1.5rem;
   display: flex;
@@ -295,13 +326,13 @@ body {
 
 .nav-tab:hover {
   color: var(--text-primary);
-  background: rgba(110, 118, 129, 0.1);
+  background: #f3f4f6;
 }
 
 .nav-tab.active {
-  color: #58a6ff;
-  background: rgba(88, 166, 255, 0.1);
-  border-color: rgba(88, 166, 255, 0.3);
+  color: #0969da;
+  background: rgba(9, 105, 218, 0.08);
+  border-color: rgba(9, 105, 218, 0.25);
   box-shadow: none;
 }
 
@@ -313,6 +344,7 @@ body {
 
 .tab-view {
   display: none;
+  position: relative;
 }
 
 .tab-view.active {
@@ -4005,4 +4037,1251 @@ body {
 .followup-arrow {
   color: #3fb950;
   font-weight: 600;
+}
+
+/* ==========================================================================
+   POLICE AUTHENTICATION & ROLE-BASED ACCESS CONTROL (RBAC)
+   ========================================================================== */
+
+/* Top Bar Active Officer Identity */
+.officer-profile-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.officer-identity-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.officer-rank-pill {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.rank-dgp {
+  background: rgba(248, 81, 73, 0.15);
+  color: #f85149;
+  border: 1px solid rgba(248, 81, 73, 0.4);
+}
+
+.rank-sp {
+  background: rgba(188, 140, 255, 0.15);
+  color: #bc8cff;
+  border: 1px solid rgba(188, 140, 255, 0.4);
+}
+
+.rank-insp {
+  background: rgba(88, 166, 255, 0.15);
+  color: #58a6ff;
+  border: 1px solid rgba(88, 166, 255, 0.4);
+}
+
+.rank-si {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+  border: 1px solid rgba(63, 185, 80, 0.4);
+}
+
+.officer-name-text {
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.officer-badge-num {
+  color: #8b949e;
+}
+
+.officer-clearance-pill {
+  font-size: 0.68rem;
+  color: #8b949e;
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 0.1rem 0.4rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* Header Buttons: Access Control & Switch Profile */
+.btn-clearance-admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(210, 153, 34, 0.12);
+  border: 1px solid rgba(210, 153, 34, 0.4);
+  color: #e3b341;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-clearance-admin:hover {
+  background: rgba(210, 153, 34, 0.22);
+  border-color: #d29922;
+  color: #ffffff;
+}
+
+.btn-switch-officer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-switch-officer:hover {
+  background: #30363d;
+  color: #ffffff;
+}
+
+/* Locked Navigation Tabs */
+.nav-tab.tab-locked {
+  opacity: 0.65;
+  position: relative;
+}
+
+.nav-tab.tab-locked:hover {
+  opacity: 0.85;
+}
+
+.tab-lock-indicator {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35rem;
+  color: #f85149;
+  vertical-align: middle;
+}
+
+/* Security Restriction Screen */
+.security-restriction-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background: rgba(13, 17, 23, 0.94);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 2rem 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.restriction-card {
+  background: #161b22;
+  border: 1px solid rgba(248, 81, 73, 0.35);
+  border-radius: 10px;
+  padding: 2.25rem 2.5rem;
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.restriction-watermark {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #f85149;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+
+.restriction-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(248, 81, 73, 0.1);
+  border: 1px solid rgba(248, 81, 73, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem auto;
+}
+
+.restriction-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f6fc;
+  margin-bottom: 0.75rem;
+}
+
+.restriction-desc {
+  font-size: 0.85rem;
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.restriction-metadata-box {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  text-align: left;
+  font-size: 0.78rem;
+}
+
+.rmb-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.rmb-label {
+  color: #8b949e;
+  font-size: 0.7rem;
+}
+
+.rmb-val {
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.restriction-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Utility Hidden */
+.d-none {
+  display: none !important;
+}
+
+/* Login Portal Overlay */
+.login-portal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.login-portal-overlay.d-none,
+.clearance-console-modal.d-none {
+  display: none !important;
+}
+
+.login-modal-container {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 2.25rem 2.5rem;
+  max-width: 960px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.btn-close-login {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-close-login:hover {
+  background: #30363d;
+  color: #ffffff;
+}
+
+.login-brand-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.login-emblem {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem auto;
+}
+
+.login-portal-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f0f6fc;
+  margin-bottom: 0.25rem;
+}
+
+.login-portal-sub {
+  font-size: 0.8rem;
+  color: #8b949e;
+}
+
+.login-instruction-banner {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-left: 3px solid #58a6ff;
+  border-radius: 0 6px 6px 0;
+  padding: 0.65rem 0.95rem;
+  font-size: 0.8rem;
+  color: #c9d1d9;
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+/* 4 Officer Cards Grid */
+.officer-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.officer-card {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1.15rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  position: relative;
+}
+
+.officer-card:hover {
+  background: #1c2128;
+  border-color: #58a6ff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.officer-card.active-officer {
+  border-color: #58a6ff;
+  background: rgba(88, 166, 255, 0.04);
+}
+
+.oc-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.oc-rank-badge {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+
+.oc-clearance-tag {
+  font-size: 0.65rem;
+  color: #8b949e;
+  font-family: var(--font-mono);
+}
+
+.oc-identity {
+  margin: 0.25rem 0;
+}
+
+.oc-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f0f6fc;
+}
+
+.oc-cadre {
+  font-size: 0.72rem;
+  color: #8b949e;
+  margin-top: 0.15rem;
+}
+
+.oc-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: #8b949e;
+  border-top: 1px solid #21262d;
+  padding-top: 0.45rem;
+}
+
+.oc-privileges-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.priv-label {
+  font-size: 0.68rem;
+  color: #8b949e;
+}
+
+.priv-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.priv-pill {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+
+.priv-pill.allowed {
+  background: #21262d;
+  color: #c9d1d9;
+}
+
+.btn-select-officer {
+  width: 100%;
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+  transition: all 0.15s ease;
+}
+
+.officer-card:hover .btn-select-officer {
+  background: #1f6feb;
+  border-color: #1f6feb;
+  color: #ffffff;
+}
+
+.btn-select-officer.btn-active {
+  background: #1f6feb;
+  color: #ffffff;
+}
+
+/* Manual Badge ID Login */
+.manual-login-box {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mlb-title {
+  font-size: 0.8rem;
+  color: #8b949e;
+  font-weight: 500;
+}
+
+.mlb-form {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.mlb-input {
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.mlb-input:focus {
+  border-color: #58a6ff;
+}
+
+/* ==========================================================================
+   DGP CLEARANCE & ACCESS CONTROL MANAGEMENT CONSOLE MODAL
+   ========================================================================== */
+.clearance-console-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.console-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 17, 23, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.console-modal-container {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  max-width: 980px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.console-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #21262d;
+}
+
+.console-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.console-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f0f6fc;
+}
+
+.console-sub {
+  font-size: 0.75rem;
+  color: #8b949e;
+  margin-top: 0.15rem;
+}
+
+.btn-console-close {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #8b949e;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-console-close:hover {
+  background: #30363d;
+  color: #ffffff;
+}
+
+.console-callout {
+  background: rgba(248, 81, 73, 0.08);
+  border-left: 3px solid #f85149;
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.825rem;
+  color: #c9d1d9;
+  line-height: 1.5;
+}
+
+.console-officers-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.officer-mgmt-card {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.omc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.omc-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.omc-badge-avatar {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+.omc-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f0f6fc;
+}
+
+.omc-rank-control {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.rank-control-label {
+  font-size: 0.75rem;
+  color: #8b949e;
+}
+
+.rank-select-input {
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #e6edf3;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+.rank-select-input:focus {
+  border-color: #58a6ff;
+}
+
+.omc-permissions-panel {
+  border-top: 1px solid #21262d;
+  padding-top: 0.75rem;
+}
+
+.opp-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8b949e;
+  margin-bottom: 0.65rem;
+}
+
+.opp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.perm-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.75rem;
+  color: #8b949e;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.perm-checkbox-label:hover {
+  background: #21262d;
+  color: #e6edf3;
+}
+
+.perm-checkbox-label.active {
+  border-color: rgba(88, 166, 255, 0.4);
+  color: #e6edf3;
+}
+
+.perm-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.perm-category {
+  color: #8b949e;
+  font-size: 0.68rem;
+}
+
+/* Console Audit Box */
+.console-audit-box {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 0.85rem 1.15rem;
+}
+
+.cab-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c9d1d9;
+  margin-bottom: 0.65rem;
+}
+
+.cab-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.audit-entry-line {
+  font-size: 0.75rem;
+  color: #8b949e;
+  display: flex;
+  gap: 0.55rem;
+  line-height: 1.4;
+}
+
+.audit-time {
+  color: #58a6ff;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.audit-msg {
+  color: #c9d1d9;
+}
+
+.console-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+  border-top: 1px solid #21262d;
+}
+
+/* ==========================================================================
+   OFFICIAL LAW ENFORCEMENT LOGIN PAGE STYLES (OFF-WHITE THEME)
+   Minimalist, high-clarity police authentication portal
+   ========================================================================== */
+
+.login-page-body {
+  min-height: 100vh;
+  background-color: #f6f8fa;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(9, 105, 218, 0.08) 0%, transparent 65%),
+    linear-gradient(rgba(208, 215, 222, 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(208, 215, 222, 0.45) 1px, transparent 1px);
+  background-size: 100% 100%, 36px 36px, 36px 36px;
+  display: flex;
+  flex-direction: column;
+  color: #1f2328;
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+.login-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 2rem;
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.05);
+}
+
+.login-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.login-topbar-emblem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-topbar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2328;
+  letter-spacing: -0.01em;
+}
+
+.login-topbar-sub {
+  font-size: 0.72rem;
+  color: #57606a;
+}
+
+.login-topbar-telemetry {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.login-main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.login-centered-wrap {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+/* Primary Standard Authentication Card */
+.login-auth-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 12px;
+  padding: 2.25rem 2.25rem;
+  box-shadow: 0 12px 32px rgba(31, 35, 40, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-auth-header {
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.lah-emblem-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.lah-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lah-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f2328;
+  margin-bottom: 0.35rem;
+}
+
+.lah-desc {
+  font-size: 0.825rem;
+  color: #57606a;
+  line-height: 1.5;
+}
+
+/* Standard Login Form */
+.login-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.login-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.login-field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1f2328;
+}
+
+.login-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  transition: all 0.15s ease;
+}
+
+.login-input-wrapper:focus-within {
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15);
+  background: #ffffff;
+}
+
+.login-input-icon {
+  color: #57606a;
+  margin-right: 0.65rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.login-text-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #1f2328;
+  font-size: 0.875rem;
+  padding: 0.55rem 0;
+  font-family: var(--font-sans);
+}
+
+.login-text-input::placeholder {
+  color: #8c959f;
+}
+
+.btn-toggle-pwd {
+  background: transparent;
+  border: none;
+  color: #57606a;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s ease;
+}
+
+.btn-toggle-pwd:hover {
+  color: #1f2328;
+}
+
+.login-options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: #57606a;
+  margin-top: -0.25rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+}
+
+.btn-primary-login {
+  width: 100%;
+  background: #0969da;
+  border: 1px solid #0756b2;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+  margin-top: 0.5rem;
+}
+
+.btn-primary-login:hover {
+  background: #0756b2;
+  box-shadow: 0 4px 14px rgba(9, 105, 218, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-primary-login:active {
+  transform: translateY(0);
+}
+
+.login-error-alert {
+  background: rgba(207, 34, 46, 0.1);
+  border: 1px solid rgba(207, 34, 46, 0.35);
+  border-radius: 6px;
+  padding: 0.65rem 0.85rem;
+  color: #cf222e;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.login-statutory-notice {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e1e4e8;
+  font-size: 0.72rem;
+  color: #57606a;
+  line-height: 1.45;
+}
+
+.login-page-footer {
+  padding: 1.25rem 2rem;
+  text-align: center;
+  background: #ffffff;
+  border-top: 1px solid #d0d7de;
+  font-size: 0.75rem;
+  color: #57606a;
+}
+
+/* ==========================================================================
+   GLOBAL OFF-WHITE THEME COMPREHENSIVE OVERRIDES
+   Ensures seamless, high-contrast, polished law enforcement appearance
+   ========================================================================== */
+
+/* Panels & Cards */
+.panel-section,
+.intel-stat-card,
+.dossier-card,
+.modal-card,
+.console-modal-container,
+.login-modal-container,
+.pair-card,
+.entity-category,
+.restriction-card,
+.graph-legend-hud,
+.graph-floating-controls,
+.surveillance-card,
+.cdr-card,
+.hawala-card,
+.osint-card {
+  background: #ffffff !important;
+  border-color: var(--border-subtle) !important;
+  box-shadow: var(--shadow-card);
+  color: var(--text-primary);
+}
+
+.panel-header,
+.console-header,
+.dossier-top-banner,
+.graph-top-toolbar {
+  background: #f6f8fa !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary);
+}
+
+.panel-title,
+.console-title,
+.dossier-title {
+  color: var(--text-primary) !important;
+}
+
+/* Tables */
+.tactical-table,
+.table-tactical {
+  background: #ffffff !important;
+}
+
+.tactical-table th,
+.table-tactical th {
+  background: #f6f8fa !important;
+  color: var(--text-muted) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+.tactical-table td,
+.table-tactical td {
+  background: #ffffff !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid #eef2f6 !important;
+}
+
+.tactical-table tr:hover td,
+.table-tactical tr:hover td {
+  background: #f6f8fa !important;
+}
+
+/* Inputs & Form Elements */
+.tactical-select,
+.nlp-textarea,
+.ledger-search,
+.control-row select,
+.btn-cable {
+  background: #f6f8fa !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+}
+
+.tactical-select:focus,
+.nlp-textarea:focus,
+.ledger-search:focus {
+  background: #ffffff !important;
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.15) !important;
+}
+
+/* AI Copilot & Search UI */
+.google-search-bar {
+  background: #ffffff !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 2px 12px rgba(31, 35, 40, 0.08) !important;
+}
+
+.google-search-input {
+  color: var(--text-primary) !important;
+}
+
+.google-title {
+  color: var(--text-primary) !important;
+}
+
+.google-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+.google-autocomplete-dropdown {
+  background: #ffffff !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 8px 24px rgba(31, 35, 40, 0.12) !important;
+  color: var(--text-primary) !important;
+}
+
+.ac-ai-item {
+  background: rgba(9, 105, 218, 0.04) !important;
+  border-bottom: 1px solid #eef2f6 !important;
+}
+
+.ac-ai-item:hover {
+  background: rgba(9, 105, 218, 0.08) !important;
+}
+
+.ac-ai-title {
+  color: #0969da !important;
+}
+
+.ac-ai-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+.chip-copilot {
+  background: #ffffff !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 1px 2px rgba(31, 35, 40, 0.05);
+}
+
+.chip-copilot:hover {
+  background: #f6f8fa !important;
+  border-color: #0969da !important;
+}
+
+/* Modals Backdrop */
+.modal-backdrop,
+.console-modal-backdrop,
+.login-portal-overlay {
+  background: rgba(31, 35, 40, 0.45) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Tactical Leaflet Map Popups */
+.tactical-popup {
+  background: #ffffff !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 4px 16px rgba(31, 35, 40, 0.15) !important;
+}
+
+.tactical-popup h4 {
+  color: #0969da !important;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  color: var(--text-primary) !important;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-cyan {
+  background: #0969da !important;
+  border-color: #0756b2 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-cyan:hover {
+  background: #0756b2 !important;
+}
+
+.btn-secondary {
+  background: #f6f8fa !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+}
+
+.btn-secondary:hover {
+  background: #eef2f6 !important;
 }

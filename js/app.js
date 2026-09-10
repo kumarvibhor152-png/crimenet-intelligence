@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTacticalClock();
   initAudioFeedback();
   if (window.suspectDigger) window.suspectDigger.init();
+  if (window.authRbac) window.authRbac.init();
   initTabs();
   initBackendConnection();
   initGlobalSearch();
@@ -40,7 +41,7 @@ function playTacticalBeep() {
   // Silent operational standard - no audio beeps
 }
 
-// 3. Tab Switching
+// 3. Tab Switching with Role-Based Clearance Verification
 function initTabs() {
   const tabButtons = document.querySelectorAll('.nav-tab');
   const tabContents = document.querySelectorAll('.tab-view');
@@ -48,12 +49,30 @@ function initTabs() {
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetTab = btn.getAttribute('data-tab');
+
+      // 3.1 Role-Based Clearance Authorization Check
+      if (window.authRbac && !window.authRbac.hasAccess(targetTab)) {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        const targetEl = document.getElementById(`tab-${targetTab}`);
+        if (targetEl) {
+          targetEl.classList.add('active');
+          window.authRbac.renderRestrictedNotice(targetEl, targetTab);
+        }
+        return;
+      }
+
       tabButtons.forEach(b => b.classList.remove('active'));
       tabContents.forEach(c => c.classList.remove('active'));
 
       btn.classList.add('active');
       const targetEl = document.getElementById(`tab-${targetTab}`);
-      if (targetEl) targetEl.classList.add('active');
+      if (targetEl) {
+        targetEl.classList.add('active');
+        if (window.authRbac) window.authRbac.clearRestrictedNotice(targetEl);
+      }
 
       playTacticalBeep(1200, 'triangle', 0.04);
 
@@ -473,7 +492,7 @@ function initGlobalSearch() {
     let html = `
       <div class="omni-result-item omni-ai-item" onclick="if(window.suspectDigger){window.suspectDigger.executeAiQuestion('${cleanQ}');} document.getElementById('omniSearchResults').classList.remove('active');">
         <div class="omni-item-top">
-          <strong class="text-cyan">Ask CrimeNet AI Copilot:</strong> "${cleanQ}"
+          <strong class="text-cyan">Ask Suraksha Sutra AI Copilot:</strong> "${cleanQ}"
           <span class="badge badge-secondary font-mono text-xs">AI Analysis</span>
         </div>
         <div class="omni-item-sub text-xs text-muted">

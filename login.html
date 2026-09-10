@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suraksha Sutra // Secured Law Enforcement Authentication</title>
+  
+  <meta name="description" content="Suraksha Sutra - Law Enforcement Officer Authentication & Clearance Verification Portal. Developed with Rashtriya Raksha University.">
+  <meta name="theme-color" content="#f6f8fa">
+  <link rel="icon" type="image/png" href="rru_logo.png">
+  
+  <!-- Master Tactical Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Tactical Vector Iconography -->
+  <script src="js/icons.js"></script>
+</head>
+<body class="login-page-body">
+
+  <!-- Top Agency Banner -->
+  <header class="login-topbar">
+    <div class="login-topbar-brand">
+      <div class="login-topbar-emblem">
+        <img src="rru_logo.png" alt="Rashtriya Raksha University Logo" class="login-logo-img">
+      </div>
+      <div>
+        <div class="login-topbar-title">Suraksha Sutra</div>
+        <div class="login-topbar-sub">Rashtriya Raksha University // Directorate of Criminal Investigation &amp; Network Link Analysis</div>
+      </div>
+    </div>
+
+    <div class="login-topbar-telemetry">
+      <span class="badge font-mono text-xs text-amber border-amber-glow">SECURE ACCESS GATEWAY</span>
+      <span id="loginClock" class="badge font-mono text-xs">IST --:--:--</span>
+    </div>
+  </header>
+
+  <!-- Main Centered Layout -->
+  <main class="login-main-content">
+    <div class="login-centered-wrap">
+
+      <!-- Standard Police Authentication Card -->
+      <section class="login-auth-card">
+        
+        <div class="login-auth-header">
+          <div class="lah-emblem-row">
+            <div class="lah-badge-icon">
+              <img src="rru_logo.png" alt="RRU Crest" class="auth-card-logo">
+            </div>
+            <div>
+              <span class="badge badge-pulse-danger text-xs font-mono">RESTRICTED LAW ENFORCEMENT</span>
+            </div>
+          </div>
+          <h1 class="lah-title">Officer Sign In</h1>
+          <p class="lah-desc">Enter your official Police Department credentials or Badge ID to access the Suraksha Sutra intelligence portal.</p>
+        </div>
+
+        <!-- Dynamic Error Alert Box -->
+        <div id="loginErrorBox" class="login-error-alert d-none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span id="loginErrorText">Invalid credentials entered.</span>
+        </div>
+
+        <!-- Standard Login Form -->
+        <form id="officerLoginForm" class="login-form-body" onsubmit="handleFormSubmit(event)">
+          
+          <!-- Field 1: Officer Badge ID or Username -->
+          <div class="login-field-group">
+            <label for="usernameInput" class="login-field-label">Officer Badge ID / Username</label>
+            <div class="login-input-wrapper">
+              <span class="login-input-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="usernameInput" 
+                class="login-text-input" 
+                placeholder="e.g. dgp.rao or IPS-0101" 
+                required 
+                autocomplete="username"
+                autofocus>
+            </div>
+          </div>
+
+          <!-- Field 2: Password / Security PIN -->
+          <div class="login-field-group">
+            <label for="passwordInput" class="login-field-label">Security Password / PIN</label>
+            <div class="login-input-wrapper">
+              <span class="login-input-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </span>
+              <input 
+                type="password" 
+                id="passwordInput" 
+                class="login-text-input" 
+                placeholder="Enter security password or PIN" 
+                required 
+                autocomplete="current-password">
+              <button type="button" id="btnTogglePassword" class="btn-toggle-pwd" onclick="togglePasswordVisibility()" title="Show/Hide Password">
+                <svg id="pwdEyeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Options Row -->
+          <div class="login-options-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMeCheckbox" checked>
+              <span>Remember Station Session</span>
+            </label>
+            <span class="font-mono text-xs text-muted">MHA-SEC-256</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="btnSubmitLogin" class="btn-primary-login">
+            <span>Authenticate &amp; Access Portal</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </form>
+
+        <div class="login-statutory-notice">
+          <strong>Official Security Warning:</strong> This system contains classified law enforcement intelligence.
+          Unauthorized access, alteration, or interception is strictly prohibited and punishable under the Information Technology Act, 2000 and Section 111 of Bharatiya Nyaya Sanhita (BNS).
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="login-page-footer">
+    <span>Suraksha Sutra // Rashtriya Raksha University • Ministry of Home Affairs • Official Law Enforcement Portal</span>
+  </footer>
+
+  <!-- RBAC Security Script -->
+  <script src="js/auth-rbac.js?v=2.3"></script>
+
+  <script>
+    // Live Tactical Clock
+    function updateClock() {
+      const el = document.getElementById('loginClock');
+      if (el) {
+        const now = new Date();
+        el.textContent = 'IST ' + now.toLocaleTimeString('en-IN', { hour12: false });
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Toggle Password Visibility
+    function togglePasswordVisibility() {
+      const input = document.getElementById('passwordInput');
+      const icon = document.getElementById('pwdEyeIcon');
+      if (!input) return;
+
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+      } else {
+        input.type = 'password';
+        icon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+      }
+    }
+
+    // Handle Form Submit
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const username = document.getElementById('usernameInput').value.trim();
+      const password = document.getElementById('passwordInput').value.trim();
+      const errorBox = document.getElementById('loginErrorBox');
+      const errorText = document.getElementById('loginErrorText');
+
+      if (!window.authRbac) {
+        alert('Authentication engine loading, please wait a moment.');
+        return;
+      }
+
+      const result = window.authRbac.authenticate(username, password);
+
+      if (result.success) {
+        if (errorBox) errorBox.classList.add('d-none');
+        window.location.href = 'index.html';
+      } else {
+        if (errorBox && errorText) {
+          errorText.textContent = result.message || 'Invalid credentials.';
+          errorBox.classList.remove('d-none');
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -414,8 +414,8 @@ class TacticalGraphEngine {
     ctx.save();
     ctx.clearRect(0, 0, this.width, this.height);
 
-    // Deep slate intelligence background
-    ctx.fillStyle = '#0a0e17';
+    // Off-white tactical blueprint background
+    ctx.fillStyle = '#f8fafc';
     ctx.fillRect(0, 0, this.width, this.height);
 
     // Precision Dot Matrix Forensic Grid
@@ -443,7 +443,7 @@ class TacticalGraphEngine {
   drawForensicDotGrid() {
     const ctx = this.ctx;
     ctx.save();
-    ctx.fillStyle = 'rgba(148, 163, 184, 0.12)';
+    ctx.fillStyle = 'rgba(100, 116, 139, 0.22)';
 
     const gridSize = 45 * this.camera.zoom;
     if (gridSize < 12) {
@@ -610,9 +610,9 @@ class TacticalGraphEngine {
     ctx.textBaseline = 'middle';
     ctx.fillText(node.subLabel, 0, 0);
 
-    // Primary Label (Full Name)
-    ctx.font = isSelected || node.isBridge ? 'bold 11px Inter, sans-serif' : '500 11px Inter, sans-serif';
-    ctx.fillStyle = isSelected ? '#38bdf8' : (node.isBridge ? '#f43f5e' : '#e2e8f0');
+    // Primary Label (Full Name) - High contrast dark slate on off-white
+    ctx.font = isSelected || node.isBridge ? 'bold 11px Inter, sans-serif' : '600 11px Inter, sans-serif';
+    ctx.fillStyle = isSelected ? '#0284c7' : (node.isBridge ? '#be123c' : '#1e293b');
     ctx.fillText(node.label, 0, node.radius + 14);
 
     // Classification Badge (Under Node)

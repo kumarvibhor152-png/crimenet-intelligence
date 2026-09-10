@@ -319,13 +319,13 @@ class HawalaRadar {
           <div class="dossier-emblem">${window.renderSvgIcon('nationalEmblem', 'text-amber', 38)}</div>
           <div class="dossier-title-box">
             <h2>FINANCIAL INTELLIGENCE UNIT (FIU-IND)</h2>
-            <h3>SUSPICIOUS TRANSACTION REPORT (STR) // CONFIDENTIAL</h3>
+            <h3>SUSPICIOUS TRANSACTION REPORT (STR) // OFFICIAL USE ONLY</h3>
             <p>Under Section 12 of Prevention of Money Laundering Act (PMLA), 2002</p>
           </div>
           <div class="dossier-ref">
             <strong>STR REF:</strong> FIU-IND/STR/2025/0842<br>
             <strong>DATE:</strong> ${new Date().toLocaleDateString('en-IN')}<br>
-            <strong>SECURITY:</strong> TOP SECRET / RESTRICTED
+            <strong>SECURITY:</strong> LAW ENFORCEMENT SENSITIVE
           </div>
         </div>
 

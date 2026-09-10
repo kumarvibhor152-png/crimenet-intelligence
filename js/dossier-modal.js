@@ -36,7 +36,7 @@ window.showDossierModal = function(personId) {
               </div>
             </div>
             <div class="banner-right">
-              <span class="classification-tag">TOP SECRET // LE-ONLY</span>
+              <span class="classification-tag">OFFICIAL LAW ENFORCEMENT RECORD</span>
               <div class="dossier-date font-mono">CASE FILE: CR-${p.person_id}-2025</div>
             </div>
           </div>

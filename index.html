@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRISHTI-CRIMENEXUS // Police-Grade AI Criminal Network & Intelligence Command</title>
+  <title>Suraksha Sutra // Law Enforcement Intelligence & Network Command</title>
   
   <!-- SEO & Law Enforcement Metadata -->
-  <meta name="description" content="AI-Powered Criminal Network & Syndicate Analyzer for Law Enforcement Agencies. Advanced graph analytics, geospatial CDR tracking, hawala money laundering radar, physical surveillance reports, and OSINT social intelligence.">
-  <meta name="theme-color" content="#080c16">
+  <meta name="description" content="Suraksha Sutra - AI-Powered Criminal Network & Syndicate Analyzer for Law Enforcement Agencies. Developed in collaboration with Rashtriya Raksha University.">
+  <meta name="theme-color" content="#f6f8fa">
+  <link rel="icon" type="image/png" href="rru_logo.png">
   
   <!-- Leaflet CSS for Tactical GIS Map -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -17,6 +18,16 @@
 
   <!-- Tactical Vector Iconography -->
   <script src="js/icons.js"></script>
+
+  <!-- Police Authentication Guard -->
+  <script>
+    (function() {
+      const active = sessionStorage.getItem('crimenet_session_active') || localStorage.getItem('crimenet_active_officer');
+      if (!active) {
+        window.location.replace('login.html');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -24,13 +35,11 @@
   <header class="command-header">
     <div class="header-agency-brand">
       <div class="agency-emblem">
-        <svg class="tactical-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2">
-          <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/>
-        </svg>
+        <img src="rru_logo.png" alt="Rashtriya Raksha University Insignia" class="agency-logo-img">
       </div>
       <div class="agency-titles">
-        <h1>CrimeNet Intelligence</h1>
-        <div class="agency-sub">Investigation Management & Criminal Network Link Analysis</div>
+        <h1>Suraksha Sutra</h1>
+        <div class="agency-sub">Rashtriya Raksha University // Investigation Management & Criminal Network Link Analysis</div>
       </div>
     </div>
 
@@ -114,7 +123,7 @@
         <div class="bridge-hero-content">
           <h3><svg class="tactical-icon text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> INVESTIGATION FINDING: PARALLEL SYNDICATE STRUCTURE & PRIMARY CROSS-CARTEL CONDUIT</h3>
           <p>
-            DRISHTI Graph Intelligence has confirmed that the criminal network operates as two compartmentalized rings: 
+            Suraksha Sutra Graph Intelligence has confirmed that the criminal network operates as two compartmentalized rings: 
             a <strong>Narcotics Trafficking Ring</strong> (headed by <strong>Priya Pillai - P016</strong>) and a 
             <strong>Financial Fraud & Extortion Ring</strong> (headed by <strong>Anil Gupta - P007</strong>). 
             <br>
@@ -413,6 +422,7 @@
   <script src="js/osint-engine.js?v=2.1"></script>
   <script src="js/datalab.js?v=2.1"></script>
   <script src="js/suspect-digger.js?v=2.2"></script>
+  <script src="js/auth-rbac.js?v=2.1"></script>
   <script src="js/app.js?v=2.1"></script>
 
 </body>
