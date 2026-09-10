@@ -14,23 +14,34 @@
   
   <!-- Master Tactical Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Tactical Vector Iconography -->
+  <script src="js/icons.js"></script>
 </head>
 <body>
 
   <!-- Top Tactical Command Header -->
   <header class="command-header">
     <div class="header-agency-brand">
-      <div class="agency-emblem">🇮🇳</div>
+      <div class="agency-emblem">
+        <svg class="tactical-icon text-cyan" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+          <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.64" y1="5.64" x2="18.36" y2="18.36"/><line x1="18.36" y1="5.64" x2="5.64" y2="18.36"/>
+        </svg>
+      </div>
       <div class="agency-titles">
         <h1>DRISHTI • CRIMENEXUS</h1>
-        <div class="agency-sub">SPECIAL OPERATIONS CYBER-INTELLIGENCE COMMAND // JURISDICTION: NATIONAL</div>
+        <div class="agency-sub">CENTRAL CRIMINAL INTELLIGENCE & SYNDICATE INVESTIGATION SYSTEM // STATE CID SPECIAL CELL</div>
       </div>
     </div>
 
     <!-- Global Omnisearch Bar -->
     <div class="header-search-bar">
       <div class="omni-input-wrap">
-        <span class="omni-icon">🔎</span>
+        <span class="omni-icon">
+          <svg class="tactical-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
         <input type="text" id="globalOmniSearch" class="omni-search-input" placeholder="Search Suspect, Vehicle, Account, Phone, FIR..." autocomplete="off">
       </div>
       <div id="omniSearchResults" class="omni-results-dropdown"></div>
@@ -43,78 +54,90 @@
         <span id="tacticalClock" class="tele-val text-cyan">2026-09-05 22:35:00 IST</span>
       </div>
       <div class="telemetry-item">
-        <span class="tele-label">THREAT POSTURE</span>
-        <span class="badge-pulse-danger">CRITICAL // ALPHA-9</span>
+        <span class="tele-label">CASE DIARY NO.</span>
+        <span class="badge font-mono text-xs">CR-884/2025/CID</span>
       </div>
       <div class="telemetry-item">
-        <span class="tele-label">AI MODEL ENGINE</span>
-        <span id="backendStatusBeacon" class="badge-pulse-online font-mono text-xs">● AI BACKEND ONLINE</span>
+        <span class="tele-label">INVESTIGATION STATUS</span>
+        <span class="badge-pulse-danger">ACTIVE // LEVEL-1 PRIORITY</span>
       </div>
       <div class="telemetry-item">
-        <span class="tele-label">OFFICER BADGE</span>
+        <span class="tele-label">AI ENGINE</span>
+        <span id="backendStatusBeacon" class="badge-pulse-online font-mono text-xs">● ONLINE</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="tele-label">INVESTIGATOR</span>
         <span class="tele-val text-slate">INSP. V. SHARMA (CID-04)</span>
       </div>
-      <button id="toggleSoundBtn" class="btn btn-xs btn-outline-cyan active" title="Toggle Tactical SFX">🔊 SFX ON</button>
     </div>
   </header>
 
   <!-- Tactical Navigation Tab Bar -->
   <nav class="tactical-navbar">
-    <button class="nav-tab active" data-tab="overview">
-      <span>🛡️</span> EXECUTIVE INTEL OVERVIEW
+    <button class="nav-tab active" data-tab="search">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> SUSPECT INTEL SEARCH
+    </button>
+    <button class="nav-tab" data-tab="overview">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> EXECUTIVE CASE SUMMARY
     </button>
     <button class="nav-tab" data-tab="graph">
-      <span>🕸️</span> RELATIONSHIP GRAPH & INFLUENCERS
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> LINK ANALYSIS GRAPH
     </button>
     <button class="nav-tab" data-tab="gis">
-      <span>📍</span> TACTICAL GIS & SURVEILLANCE
-    </button>
-    <button class="nav-tab" data-tab="hawala">
-      <span>💸</span> HAWALA & SMURFING RADAR
-    </button>
-    <button class="nav-tab" data-tab="cdr">
-      <span>📞</span> CDR FORENSICS & BURNER BURSTS
-    </button>
-    <button class="nav-tab" data-tab="surveillance">
-      <span>👁️</span> PHYSICAL SURVEILLANCE LOGS
-    </button>
-    <button class="nav-tab" data-tab="osint">
-      <span>📱</span> OSINT SOCIAL INTELLIGENCE
-    </button>
-    <button class="nav-tab" data-tab="aimodel">
-      <span>🧠</span> AI MODEL & NEURAL PREDICTIONS
-    </button>
-    <button class="nav-tab" data-tab="nlp">
-      <span>🤖</span> AI REPORT NER EXTRACTOR
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> GEOSPATIAL & TOWER CDRs
     </button>
     <button class="nav-tab" data-tab="dossiers">
-      <span>📂</span> SUSPECT REGISTRY (40)
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> SUSPECT REGISTRY (40)
+    </button>
+    <button class="nav-tab" data-tab="hawala">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> HAWALA & FINANCIALS
+    </button>
+    <button class="nav-tab" data-tab="cdr">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> TELECOM CDRs
+    </button>
+    <button class="nav-tab" data-tab="surveillance">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> SURVEILLANCE LOGS
+    </button>
+    <button class="nav-tab" data-tab="osint">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> OSINT SOCIAL
+    </button>
+    <button class="nav-tab" data-tab="datalab">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg> AI INGESTION LAB
+    </button>
+    <button class="nav-tab" data-tab="aimodel">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg> AI PREDICTOR
+    </button>
+    <button class="nav-tab" data-tab="nlp">
+      <svg class="nav-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg> NLP PARSER
     </button>
   </nav>
 
   <!-- Main Viewport Area -->
   <main class="app-viewport">
 
+    <!-- 0. Google-Style Suspect Search & Deep-Dive Workspace (PRIMARY) -->
+    <section id="tab-search" class="tab-view active"></section>
+
     <!-- 1. Executive Intel Overview Tab -->
-    <section id="tab-overview" class="tab-view active">
+    <section id="tab-overview" class="tab-view">
       
       <!-- Critical Ground Truth Revelation Banner -->
       <div class="bridge-hero-banner">
         <div class="bridge-hero-content">
-          <h3>⭐ SYNDICATE STRUCTURE DISCOVERY: DUAL-RING ARCHITECTURE & HIDDEN LINCHPIN</h3>
+          <h3><svg class="tactical-icon text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> INVESTIGATION FINDING: PARALLEL SYNDICATE STRUCTURE & PRIMARY CROSS-CARTEL CONDUIT</h3>
           <p>
-            DRISHTI Graph Intelligence has uncovered that the criminal network operates as two distinct specialized cartels: 
-            a <strong>9-Member Narcotics Trafficking Ring</strong> (led by Kingpin <strong>Priya Pillai - P016</strong>) and a 
-            <strong>9-Member Financial Fraud & Extortion Ring</strong> (led by Kingpin <strong>Anil Gupta - P007</strong>). 
+            DRISHTI Graph Intelligence has confirmed that the criminal network operates as two compartmentalized rings: 
+            a <strong>Narcotics Trafficking Ring</strong> (headed by <strong>Priya Pillai - P016</strong>) and a 
+            <strong>Financial Fraud & Extortion Ring</strong> (headed by <strong>Anil Gupta - P007</strong>). 
             <br>
-            <strong>The Hidden Connection:</strong> <strong>Kunal Khan (P004)</strong> links both cartels via telecom CDRs and Hawala accounts. 
-            He was <em>never named as co-accused in the same FIR as either kingpin</em>, but surveillance logs <strong>SR3019</strong> (parked outside P016's residence) 
-            and <strong>SR3020</strong> (outside Sunrise Money Exchange with P007) establish him as the ultimate covert bridge.
+            <strong>Covert Cross-Cartel Nexus:</strong> <strong>Kunal Khan (P004)</strong> links both syndicates via telecom CDRs and Hawala layering accounts. 
+            Crucially, he was <em>deliberately omitted from joint FIR chargesheets</em>, but field surveillance intercepts <strong>SR3019</strong> 
+            (rendezvous at P016's Nagpur safehouse) and <strong>SR3020</strong> (rendezvous outside Sunrise Money Exchange with P007) definitively expose him as the operational linchpin.
           </p>
         </div>
         <div class="bridge-hero-actions">
-          <button class="btn btn-pink" onclick="document.querySelector('[data-tab=\'graph\']').click()">
-            🕸️ View Dual-Ring Link Graph
+          <button class="btn btn-primary" onclick="document.querySelector('[data-tab=\'graph\']').click()">
+            <svg class="tactical-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Inspect Link Analysis Graph
           </button>
         </div>
       </div>
@@ -126,9 +149,9 @@
           <div class="stat-value text-danger">40 PERSONS</div>
           <div class="stat-meta">10 Active Absconding Fugitives</div>
         </div>
-        <div class="intel-stat-card border-pink">
-          <div class="stat-label">COVERT DUAL-RING BRIDGE</div>
-          <div class="stat-value text-pink">P004 (KUNAL KHAN)</div>
+        <div class="intel-stat-card border-danger">
+          <div class="stat-label">PRIMARY COVERT CONDUIT</div>
+          <div class="stat-value text-danger">P004 (KUNAL KHAN)</div>
           <div class="stat-meta">Links Narcotics (P016) & Fraud (P007)</div>
         </div>
         <div class="intel-stat-card border-amber">
@@ -149,7 +172,7 @@
         <div class="panel-section">
           <div class="panel-header">
             <div class="panel-title">
-              <span class="icon">👑</span> KEY SYNDICATE INFLUENCERS (GRAPH CENTRALITY RANKING)
+              <span class="icon"><svg class="tactical-icon text-cyan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg></span> KEY SYNDICATE INFLUENCERS (GRAPH CENTRALITY RANKING)
             </div>
             <span class="badge badge-cyan">AI RANKED</span>
           </div>
@@ -160,7 +183,7 @@
         <div class="panel-section">
           <div class="panel-header">
             <div class="panel-title">
-              <span class="icon">🚨</span> REAL-TIME DETECTED ANOMALY & PATTERN ALERTS
+              <span class="icon"><svg class="tactical-icon text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span> REAL-TIME DETECTED ANOMALY & PATTERN ALERTS
             </div>
             <span class="badge badge-danger">5 ACTIVE PATTERNS</span>
           </div>
@@ -169,56 +192,109 @@
       </div>
     </section>
 
+    <!-- 1.5. AI Data Ingestion & Neural Lab Tab -->
+    <section id="tab-datalab" class="tab-view"></section>
+
     <!-- 2. Relationship Graph Tab -->
     <section id="tab-graph" class="tab-view">
       <div class="graph-workspace">
+        <!-- Professional Top Toolbar -->
+        <div class="graph-top-toolbar">
+          <div class="toolbar-left">
+            <span class="graph-status-badge font-mono">CASE CR-884/2025 // LINK ANALYSIS</span>
+            <button id="btnToggleRings" class="btn btn-xs btn-outline-cyan active" onclick="if(window.graphInstance) window.graphInstance.toggleDualRings()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg> Dual-Ring Cartel View
+            </button>
+            <button id="btnToggleCalls" class="btn btn-xs btn-outline-secondary active" onclick="if(window.graphInstance) window.graphInstance.toggleCalls()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Telecom CDRs
+            </button>
+            <button id="btnToggleFinances" class="btn btn-xs btn-outline-secondary active" onclick="if(window.graphInstance) window.graphInstance.toggleFinances()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Hawala Transfers
+            </button>
+            <button id="btnToggleSurveillance" class="btn btn-xs btn-outline-secondary active" onclick="if(window.graphInstance) window.graphInstance.toggleSurveillance()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Surveillance Meetings
+            </button>
+          </div>
+          <div class="toolbar-right">
+            <button class="btn btn-xs btn-outline-secondary" title="Zoom In" onclick="if(window.graphInstance) window.graphInstance.zoomIn()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Zoom +
+            </button>
+            <button class="btn btn-xs btn-outline-secondary" title="Zoom Out" onclick="if(window.graphInstance) window.graphInstance.zoomOut()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/></svg> Zoom -
+            </button>
+            <button class="btn btn-xs btn-outline-cyan" title="Fit to Screen" onclick="if(window.graphInstance) window.graphInstance.resetView()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg> Reset Camera
+            </button>
+            <button class="btn btn-xs btn-primary" title="Export Evidence PNG" onclick="if(window.graphInstance) window.graphInstance.exportEvidencePng()">
+              <svg class="tactical-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Export Evidence PNG
+            </button>
+          </div>
+        </div>
+
+        <!-- Neural Link Predictor Bar -->
+        <div class="graph-link-predictor-bar">
+          <div class="flex items-center gap-2">
+            <span class="badge badge-pulse-online font-mono text-xs">● AI NEURAL LINK PREDICTOR</span>
+            <span class="text-xs text-muted">Subject A:</span>
+            <select id="linkPredSubjectA" class="form-control-xs font-mono"></select>
+            <span class="text-xs text-muted">⟷ Subject B:</span>
+            <select id="linkPredSubjectB" class="form-control-xs font-mono"></select>
+            <button class="btn btn-xs btn-cyan" onclick="window.runNeuralLinkPrediction()">
+              Calculate Criminal Link Probability
+            </button>
+          </div>
+          <div id="linkPredResultBadge" class="link-pred-badge-container"></div>
+        </div>
+
         <canvas id="graphCanvas" class="graph-canvas"></canvas>
 
         <!-- Floating Controls Panel -->
         <div class="graph-floating-controls">
           <div class="control-row">
-            <label>SYNDICATE HIGHLIGHT MODE:</label>
-            <button class="btn btn-sm btn-pink w-100" onclick="if(window.graphInstance) window.graphInstance.toggleDualRings()">
-              ⭐ Toggle Dual-Ring & Bridge View
-            </button>
-          </div>
-
-          <div class="control-row">
-            <label>NODE SIZE METRIC (AI CENTRALITY):</label>
+            <label>NODE SIZING (CENTRALITY METRIC):</label>
             <select id="graphCentralityMetric" class="tactical-select">
-              <option value="betweenness" selected>Betweenness Centrality (Brokers)</option>
-              <option value="degree">Degree Centrality (Volume)</option>
-              <option value="pagerank">PageRank (Influential)</option>
-              <option value="threat">Threat Score (Risk Level)</option>
+              <option value="betweenness" selected>Betweenness Centrality (Conduits / Brokers)</option>
+              <option value="degree">Degree Centrality (Connection Volume)</option>
+              <option value="pagerank">PageRank (Influential Operatives)</option>
+              <option value="threat">Threat Assessment Rating</option>
             </select>
           </div>
 
           <div class="control-row">
-            <label>FILTER BY STATUS:</label>
+            <label>LEGAL STATUS FILTER:</label>
             <select id="graphStatusFilter" class="tactical-select">
-              <option value="ALL" selected>All Suspects (40)</option>
+              <option value="ALL" selected>All Case Entities (40 Suspects + Orgs)</option>
               <option value="ABSCONDING">Absconding Fugitives Only</option>
-              <option value="CONVICTED">Convicted Operatives Only</option>
-              <option value="PENDING">Under Trial Only</option>
+              <option value="CONVICTED">Convicted Accused Only</option>
+              <option value="PENDING">Under Trial Accused Only</option>
             </select>
-          </div>
-
-          <div class="control-row mt-2">
-            <button class="btn btn-sm btn-outline-cyan" onclick="if(window.graphInstance) window.graphInstance.resetView()">
-              🎯 Reset Graph Camera
-            </button>
           </div>
         </div>
 
-        <!-- Shortest Path Finder Widget -->
+        <!-- Investigation Graph Legend HUD -->
+        <div class="graph-legend-hud">
+          <div class="legend-header font-mono">CASE EVIDENCE LEGEND</div>
+          <div class="legend-items-list">
+            <div class="legend-item"><span class="legend-swatch swatch-conduit"></span> Cross-Cartel Conduit (P004)</div>
+            <div class="legend-item"><span class="legend-swatch swatch-narco"></span> Narcotics Cartel (P016 Ring)</div>
+            <div class="legend-item"><span class="legend-swatch swatch-fraud"></span> Fraud & Extortion (P007 Ring)</div>
+            <div class="legend-item"><span class="legend-swatch swatch-org"></span> Corporate Entity (O10 Hub)</div>
+            <div class="legend-divider"></div>
+            <div class="legend-item"><span class="legend-line line-call"></span> Intercepted Telecom CDR</div>
+            <div class="legend-item"><span class="legend-line line-finance"></span> Hawala Smurfing Transfer</div>
+            <div class="legend-item"><span class="legend-line line-surveillance"></span> Surveillance Rendezvous</div>
+          </div>
+        </div>
+
+        <!-- Evidence Multi-Hop Pathfinder Widget -->
         <div class="pathfinder-widget">
           <div class="panel-title text-xs">
-            <span>⚡</span> TRACE SYNDICATE CONNECTION PATH
+            <span><svg class="tactical-icon text-cyan" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></span> EVIDENCE NEXUS & MULTI-HOP PATHFINDER
           </div>
           <div class="path-select-grid">
             <select id="pathSourceSelect" class="tactical-select"></select>
             <select id="pathTargetSelect" class="tactical-select"></select>
-            <button id="runPathFinderBtn" class="btn btn-sm btn-cyan">Trace</button>
+            <button id="runPathFinderBtn" class="btn btn-sm btn-cyan">Trace Nexus</button>
           </div>
           <div id="pathResultBox" class="path-result-box">
             Select two suspects to compute the exact communication & financial intermediary hops.
@@ -239,11 +315,11 @@
       <div class="panel-section">
         <div class="panel-header">
           <div class="panel-title">
-            <span class="icon">📍</span> GEOSPATIAL CRIME, TOWER RADAR & SURVEILLANCE RENDEZVOUS
+            <span class="icon"><svg class="tactical-icon text-cyan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span> GEOSPATIAL CRIME, TOWER RADAR & SURVEILLANCE RENDEZVOUS
           </div>
           <div class="panel-controls">
             <button class="btn btn-sm btn-outline-cyan" onclick="if(window.gisMapInstance) window.gisMapInstance.resetView()">
-              🇮🇳 Center India View
+              <svg class="tactical-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> Center India View
             </button>
           </div>
         </div>
@@ -268,7 +344,7 @@
       <div class="panel-section">
         <div class="panel-header">
           <div class="panel-title">
-            <span class="icon">👁️</span> PHYSICAL FIELD SURVEILLANCE INTERCEPT LOGS (SR3001 - SR3020)
+            <span class="icon"><svg class="tactical-icon text-cyan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span> PHYSICAL FIELD SURVEILLANCE INTERCEPT LOGS (SR3001 - SR3020)
           </div>
           <div class="ledger-filters">
             <input type="text" id="surveillanceSearchInput" placeholder="Filter by City, Subject, Vehicle..." class="ledger-search" oninput="window.filterSurveillanceLogs(this.value)">
@@ -295,36 +371,7 @@
 
     <!-- 7. OSINT Social Intelligence Tab -->
     <section id="tab-osint" class="tab-view">
-      <div class="panel-section">
-        <div class="panel-header">
-          <div class="panel-title">
-            <span class="icon">📱</span> OSINT SOCIAL MEDIA UNDERGROUND MONITORING (58 INTERCEPTS)
-          </div>
-          <div class="ledger-filters">
-            <button class="btn-filter active" onclick="window.filterOSINT('ALL')">All Platforms</button>
-            <button class="btn-filter" onclick="window.filterOSINT('Instagram')">Instagram</button>
-            <button class="btn-filter" onclick="window.filterOSINT('Telegram')">Telegram</button>
-            <button class="btn-filter" onclick="window.filterOSINT('X')">X (Twitter)</button>
-            <button class="btn-filter" onclick="window.filterOSINT('WhatsApp')">WhatsApp</button>
-          </div>
-        </div>
-        <div class="table-responsive">
-          <table class="tactical-table">
-            <thead>
-              <tr>
-                <th>POST ID</th>
-                <th>PLATFORM</th>
-                <th>HANDLE</th>
-                <th>SUBJECT</th>
-                <th>DATE</th>
-                <th>INTERCEPTED POST TEXT</th>
-                <th>MENTIONS (ASSOCIATE)</th>
-              </tr>
-            </thead>
-            <tbody id="osintTableBody"></tbody>
-          </table>
-        </div>
-      </div>
+      <div id="osintContainer"></div>
     </section>
 
     <!-- 8. AI / NLP Report Extractor Tab -->
@@ -337,7 +384,7 @@
       <div class="panel-section">
         <div class="panel-header">
           <div class="panel-title">
-            <span class="icon">📂</span> CENTRAL SUSPECT INTELLIGENCE REGISTRY (40 SUBJECTS)
+            <span class="icon"><svg class="tactical-icon text-cyan" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span> CENTRAL SUSPECT INTELLIGENCE REGISTRY (40 SUBJECTS)
           </div>
           <div class="ledger-filters">
             <select id="suspectStatusFilter" class="tactical-select">
@@ -366,16 +413,19 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Internal Engine Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/api-client.js"></script>
-  <script src="js/graph-engine.js"></script>
-  <script src="js/gis-map.js"></script>
-  <script src="js/hawala-radar.js"></script>
-  <script src="js/cdr-engine.js"></script>
-  <script src="js/nlp-engine.js"></script>
-  <script src="js/ai-model-tab.js"></script>
-  <script src="js/dossier-modal.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js?v=2.1"></script>
+  <script src="js/api-client.js?v=2.1"></script>
+  <script src="js/graph-engine.js?v=2.1"></script>
+  <script src="js/gis-map.js?v=2.1"></script>
+  <script src="js/hawala-radar.js?v=2.1"></script>
+  <script src="js/cdr-engine.js?v=2.1"></script>
+  <script src="js/nlp-engine.js?v=2.1"></script>
+  <script src="js/ai-model-tab.js?v=2.1"></script>
+  <script src="js/dossier-modal.js?v=2.1"></script>
+  <script src="js/osint-engine.js?v=2.1"></script>
+  <script src="js/datalab.js?v=2.1"></script>
+  <script src="js/suspect-digger.js?v=2.2"></script>
+  <script src="js/app.js?v=2.1"></script>
 
 </body>
 </html>

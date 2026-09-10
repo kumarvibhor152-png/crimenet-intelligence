@@ -13,3 +13,7 @@ desktop.ini
 __pycache__/
 *.pyc
 *.pyo
+
+# Scratch & Temporary
+scratch/
+

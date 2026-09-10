@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTacticalClock();
   initAudioFeedback();
+  if (window.suspectDigger) window.suspectDigger.init();
   initTabs();
   initBackendConnection();
   initGlobalSearch();
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSurveillanceTab();
   initOSINTTab();
   initGraphTabControls();
+  if (window.dataLabInstance) window.dataLabInstance.init();
 });
 
 // 1. Tactical Clock & Live Telemetry
@@ -29,38 +31,13 @@ function initTacticalClock() {
   update();
 }
 
-// 2. Synthesized Tactical Sound Effects (Web Audio API)
-let audioCtx = null;
-let soundEnabled = true;
-
+// 2. Audio Feedback - Disabled for silent, authoritative police workstation standard
 function initAudioFeedback() {
-  const soundBtn = document.getElementById('toggleSoundBtn');
-  if (soundBtn) {
-    soundBtn.addEventListener('click', () => {
-      soundEnabled = !soundEnabled;
-      soundBtn.innerHTML = soundEnabled ? '🔊 SFX ON' : '🔇 SFX OFF';
-      soundBtn.classList.toggle('active', soundEnabled);
-    });
-  }
+  // Silent operational standard for law enforcement systems
 }
 
-function playTacticalBeep(freq = 880, type = 'sine', duration = 0.05) {
-  if (!soundEnabled) return;
-  try {
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-    gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.start();
-    osc.stop(audioCtx.currentTime + duration);
-  } catch (e) {
-    // Audio context not allowed until user gesture
-  }
+function playTacticalBeep() {
+  // Silent operational standard - no audio beeps
 }
 
 // 3. Tab Switching
@@ -80,10 +57,26 @@ function initTabs() {
 
       playTacticalBeep(1200, 'triangle', 0.04);
 
+      if (targetTab === 'search' && window.suspectDigger) {
+        if (window.suspectDigger.currentSuspectId) {
+          if (window.suspectDigger.activeSubTab === 'relation-chart') {
+            window.suspectDigger.initSuspectRelationChart();
+          } else if (window.suspectDigger.activeSubTab === 'gis-map') {
+            window.suspectDigger.initSuspectGisMap();
+          }
+        }
+      }
+
+      if (targetTab === 'datalab' && window.dataLabInstance) {
+        window.dataLabInstance.init();
+      }
+
       if (targetTab === 'graph' && !window.graphInstance) {
         window.graphInstance = new window.TacticalGraphEngine('graphCanvas');
+        if (window.dataLabInstance) window.dataLabInstance.initNeuralLinkPredictor();
       } else if (targetTab === 'graph' && window.graphInstance) {
         window.graphInstance.initCanvasSize();
+        if (window.dataLabInstance) window.dataLabInstance.initNeuralLinkPredictor();
       }
 
       if (targetTab === 'gis' && !window.gisMapInstance) {
@@ -102,6 +95,15 @@ function initTabs() {
 
       if (targetTab === 'nlp' && !window.nlpEngineInstance) {
         window.nlpEngineInstance = new window.NLPEngine('nlpContainer');
+      }
+
+      if (targetTab === 'osint') {
+        if (!window.osintEngineInstance && window.OSINTEngine) {
+          window.osintEngineInstance = new window.OSINTEngine('osintContainer');
+          window.osintEngineInstance.init();
+        } else if (window.osintEngineInstance) {
+          window.osintEngineInstance.render();
+        }
       }
 
       if (targetTab === 'aimodel' && !window.aiModelLabInstance) {
@@ -158,11 +160,11 @@ function initOverviewTab() {
       const isBridge = p.person_id === engine.groundTruth.bridge_person_id;
       return `
         <div class="influencer-card ${isBridge ? 'border-pink' : ''}" onclick="window.showDossierModal('${p.person_id}')">
-          <div class="rank-badge">${isBridge ? '⭐' : `#${idx + 1}`}</div>
+          <div class="rank-badge">${isBridge ? window.renderSvgIcon('star', 'text-pink', 14) : `#${idx + 1}`}</div>
           <div class="influencer-info">
             <div class="influencer-name">
               <strong>${p.name}</strong> (${p.person_id})
-              ${isBridge ? '<span class="badge badge-pink">HIDDEN BRIDGE LINCHPIN</span>' : ''}
+              ${isBridge ? '<span class="badge badge-danger font-mono text-xs">CROSS-CARTEL CONDUIT</span>' : ''}
               ${p.statusFlags.includes('ABSCONDING') ? '<span class="badge badge-danger">ABSCONDING</span>' : ''}
             </div>
             <div class="influencer-metrics font-mono text-xs">
@@ -215,11 +217,11 @@ function initSuspectDirectoryTab() {
       const isAbs = p.statusFlags.includes('ABSCONDING');
       const isConv = p.statusFlags.includes('CONVICTED');
       return `
-        <div class="suspect-grid-card ${isBridge ? 'card-border-pink' : isAbs ? 'card-border-red' : ''}" onclick="window.showDossierModal('${p.person_id}')">
+        <div class="suspect-grid-card ${isBridge ? 'card-border-pink' : isAbs ? 'card-border-red' : ''}" onclick="if(window.suspectDigger){window.suspectDigger.selectSuspect('${p.person_id}');}else{window.showDossierModal('${p.person_id}');}">
           <div class="suspect-card-top">
             <span class="suspect-id-tag font-mono">${p.person_id}</span>
-            <span class="badge ${isBridge ? 'badge-pink' : isAbs ? 'badge-danger' : isConv ? 'badge-amber' : 'badge-cyan'}">
-              ${isBridge ? '⭐ DUAL-RING BRIDGE' : isAbs ? 'ABSCONDING' : isConv ? 'CONVICTED' : 'SUSPECT'}
+            <span class="badge ${isBridge ? 'badge-danger' : isAbs ? 'badge-danger' : isConv ? 'badge-amber' : 'badge-cyan'}">
+              ${isBridge ? `${window.renderSvgIcon('alertTriangle', '', 12)} CROSS-CARTEL CONDUIT` : isAbs ? 'ABSCONDING' : isConv ? 'CONVICTED' : 'SUSPECT'}
             </span>
           </div>
           <div class="suspect-card-body">
@@ -337,52 +339,12 @@ function initSurveillanceTab() {
   };
 }
 
-// 7. OSINT Social Media Tab
+// 7. OSINT Cyber Intelligence Tab
 function initOSINTTab() {
-  const tbody = document.getElementById('osintTableBody');
-  if (!tbody) return;
-
-  const engine = window.crimeDataEngine;
-  let currentPlatform = 'ALL';
-
-  const renderOSINT = () => {
-    let list = engine.socialPosts;
-    if (currentPlatform !== 'ALL') {
-      list = list.filter(p => p.platform.toLowerCase() === currentPlatform.toLowerCase());
-    }
-
-    tbody.innerHTML = list.map(p => {
-      const subj = engine.personMap.get(p.person_id);
-      const isContraband = p.text.includes('shipment') || p.text.includes('deal closing') || p.text.includes('money moves');
-
-      return `
-        <tr class="${isContraband ? 'row-alert' : ''}">
-          <td class="font-mono text-cyan">${p.post_id}</td>
-          <td><span class="badge badge-purple">${p.platform}</span></td>
-          <td class="font-mono text-xs text-slate">${p.handle}</td>
-          <td><strong>${subj ? subj.name : 'Unknown'}</strong> (${p.person_id})</td>
-          <td class="text-muted text-xs">${p.date}</td>
-          <td>
-            ${isContraband ? '<span class="badge badge-danger text-xs">CONTRABAND SIGNAL</span> ' : ''}
-            "${p.text}"
-          </td>
-          <td>
-            ${p.mentions_handle ? `<span class="badge badge-cyan">${p.mentions_handle} (${p.mentions_person_id})</span>` : '<span class="text-muted text-xs">None</span>'}
-          </td>
-        </tr>
-      `;
-    }).join('');
-  };
-
-  renderOSINT();
-
-  window.filterOSINT = (platform) => {
-    currentPlatform = platform;
-    document.querySelectorAll('#tab-osint .btn-filter').forEach(b => {
-      b.classList.toggle('active', b.textContent.toLowerCase().includes(platform.toLowerCase()));
-    });
-    renderOSINT();
-  };
+  if (window.OSINTEngine && !window.osintEngineInstance) {
+    window.osintEngineInstance = new window.OSINTEngine('osintContainer');
+    window.osintEngineInstance.init();
+  }
 }
 
 // 8. Graph Tab Controls & Inspector Callbacks
@@ -416,8 +378,14 @@ function initGraphTabControls() {
         const resEl = document.getElementById('pathResultBox');
         if (resEl) {
           if (path.length > 0) {
-            resEl.innerHTML = `<span class="text-cyan font-bold">Trace Route:</span> ${path.join(' ➔ ')} (${path.length - 1} hops)`;
-            playTacticalBeep(1400, 'triangle', 0.08);
+            const hops = [];
+            for (let i = 0; i < path.length - 1; i++) {
+              hops.push(`${path[i]} &rarr; ${path[i+1]}`);
+            }
+            resEl.innerHTML = `
+              <div class="text-cyan font-bold mb-1">Nexus Trace Route (${path.length - 1} intermediary hops):</div>
+              <div class="font-mono text-white">${path.join(' &rarr; ')}</div>
+            `;
           } else {
             resEl.innerHTML = `<span class="text-danger">No direct or intermediary path found between selected entities.</span>`;
           }
@@ -441,7 +409,6 @@ function initGraphTabControls() {
   window.onGraphNodeSelected = (node) => {
     const panel = document.getElementById('graphInspectorPanel');
     if (!panel) return;
-    playTacticalBeep(1100, 'sine', 0.04);
 
     if (node.type === 'person') {
       const p = node.data;
@@ -452,7 +419,7 @@ function initGraphTabControls() {
             <h4>${p.name}</h4>
             <span class="font-mono text-cyan">${p.person_id}</span>
           </div>
-          ${isBridge ? '<div class="badge badge-pink w-100 mb-2 text-center">⭐ HIDDEN DUAL-RING BRIDGE</div>' : ''}
+          ${isBridge ? `<div class="badge badge-danger w-100 mb-2 text-center font-mono text-xs">${window.renderSvgIcon('alertTriangle', '', 12)} PRIMARY CROSS-CARTEL CONDUIT</div>` : ''}
           <p><strong>Syndicate Ring:</strong> <span class="text-cyan">${p.ringRole}</span></p>
           <p><strong>Base:</strong> ${p.home_city}</p>
           <p><strong>Phone:</strong> <span class="font-mono">${p.phone}</span></p>
@@ -462,7 +429,7 @@ function initGraphTabControls() {
           <p><strong>Surveillance Sightings:</strong> ${p.surveillanceSightings.length}</p>
           <p><strong>Prior Cases:</strong> ${p.firs.length} FIRs</p>
           <button class="btn btn-sm btn-primary w-100 mt-2" onclick="window.showDossierModal('${p.person_id}')">
-            📂 Open Full Case Dossier
+            ${window.renderSvgIcon('folder', '', 14)} Open Full Case Dossier
           </button>
         </div>
       `;
@@ -476,9 +443,9 @@ function initGraphTabControls() {
           </div>
           <p><strong>Jurisdiction:</strong> ${o.registered_city}</p>
           <p><strong>Account:</strong> <span class="font-mono">${o.account_no}</span></p>
-          ${o.org_id === 'O10' ? '<p class="text-danger font-bold">⚠️ Flagged Hawala Smurfing Hub</p>' : ''}
+          ${o.org_id === 'O10' ? `<p class="text-danger font-bold">${window.renderSvgIcon('alertTriangle', '', 14)} Flagged Hawala Smurfing Hub</p>` : ''}
           <button class="btn btn-sm btn-outline-cyan w-100 mt-2" onclick="window.filterTransactionsByAccount('${o.account_no}')">
-            💸 View Financial Trail
+            ${window.renderSvgIcon('dollarSign', '', 14)} View Financial Trail
           </button>
         </div>
       `;
@@ -504,10 +471,10 @@ function initGlobalSearch() {
 
     if (matches.length > 0) {
       resultsDropdown.innerHTML = matches.map(m => `
-        <div class="omni-result-item" onclick="window.showDossierModal('${m.person_id}'); document.getElementById('omniSearchResults').classList.remove('active');">
+        <div class="omni-result-item" onclick="if(window.suspectDigger){window.suspectDigger.selectSuspect('${m.person_id}');}else{window.showDossierModal('${m.person_id}');} document.getElementById('omniSearchResults').classList.remove('active');">
           <div class="omni-item-top">
             <strong>${m.name}</strong> <span class="font-mono text-cyan">(${m.person_id})</span>
-            ${m.person_id === engine.groundTruth.bridge_person_id ? '<span class="badge badge-pink">BRIDGE</span>' : ''}
+            ${m.person_id === engine.groundTruth.bridge_person_id ? '<span class="badge badge-danger font-mono text-xs">CONDUIT</span>' : ''}
             ${m.statusFlags.includes('ABSCONDING') ? '<span class="badge badge-danger">ABSCONDING</span>' : ''}
           </div>
           <div class="omni-item-sub text-xs text-muted">
@@ -533,7 +500,7 @@ function initGlobalSearch() {
 window.showTacticalNotification = function(msg) {
   const toast = document.createElement('div');
   toast.className = 'tactical-toast';
-  toast.innerHTML = `<span class="toast-icon">⚡</span> <span>${msg}</span>`;
+  toast.innerHTML = `<span class="toast-icon">${window.renderSvgIcon('zap', 'text-cyan', 16)}</span> <span>${msg}</span>`;
   document.body.appendChild(toast);
   setTimeout(() => toast.classList.add('visible'), 50);
   setTimeout(() => {

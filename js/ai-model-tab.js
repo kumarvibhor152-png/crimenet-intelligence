@@ -48,7 +48,7 @@ class AIModelLabView {
           </div>
           <div class="ai-hero-actions">
             <button id="btnRetrainModel" class="btn btn-sm btn-outline-cyan">
-              ⚡ RE-TRAIN AI MODEL LIVE
+              ${window.renderSvgIcon('zap', '', 14)} RE-TRAIN AI MODEL LIVE
             </button>
           </div>
         </div>
@@ -84,7 +84,7 @@ class AIModelLabView {
         <!-- Left Panel: Loss Curve & Confusion Matrix -->
         <div class="ai-panel">
           <div class="ai-panel-header">
-            <h3>📈 MODEL CONVERGENCE & LOSS HISTORY</h3>
+            <h3>${window.renderSvgIcon('lineChart', 'text-cyan', 18)} MODEL CONVERGENCE & LOSS HISTORY</h3>
             <span class="badge font-mono">AdamW (lr=0.008, wd=1e-4)</span>
           </div>
           <div class="ai-panel-body">
@@ -108,7 +108,7 @@ class AIModelLabView {
         <!-- Right Panel: Feature Importance Ranking -->
         <div class="ai-panel">
           <div class="ai-panel-header">
-            <h3>🔬 FEATURE IMPORTANCE RANKING</h3>
+            <h3>${window.renderSvgIcon('microscope', 'text-cyan', 18)} FEATURE IMPORTANCE RANKING</h3>
             <span class="badge font-mono">24 Extracted Multi-Modal Signals</span>
           </div>
           <div class="ai-panel-body">
@@ -126,7 +126,7 @@ class AIModelLabView {
       <!-- Interactive Neural Link Predictor Sandbox -->
       <div class="ai-panel mt-4">
         <div class="ai-panel-header">
-          <h3>🕸️ GRAPH NEURAL LINK PREDICTOR // COVERT ACCOMPLICE DETECTOR</h3>
+          <h3>${window.renderSvgIcon('network', 'text-cyan', 18)} GRAPH NEURAL LINK PREDICTOR // COVERT ACCOMPLICE DETECTOR</h3>
           <span class="badge badge-pulse-danger font-mono">ADAMIC-ADAR + TOPOLOGICAL EMBEDDING</span>
         </div>
         <div class="ai-panel-body">
@@ -141,7 +141,7 @@ class AIModelLabView {
                 ${this.suspects.map(s => `<option value="${s.person_id}" ${s.person_id === 'P016' ? 'selected' : ''}>${s.person_id} - ${s.name} [${s.ai_predicted_role}]</option>`).join('')}
               </select>
             </div>
-            <div class="link-vs-badge font-mono">⚡ VS ⚡</div>
+            <div class="link-vs-badge font-mono">${window.renderSvgIcon('crosshair', 'text-cyan', 14)} VS ${window.renderSvgIcon('crosshair', 'text-pink', 14)}</div>
             <div class="form-group">
               <label class="font-mono text-xs text-cyan">SUSPECT B (TARGET SUBJECT):</label>
               <select id="linkSubjectB" class="form-select font-mono">
@@ -149,7 +149,7 @@ class AIModelLabView {
               </select>
             </div>
             <button id="btnRunLinkPrediction" class="btn btn-primary font-mono">
-              🔍 PREDICT CRIMINAL LINK
+              ${window.renderSvgIcon('search', '', 14)} PREDICT CRIMINAL LINK
             </button>
           </div>
 
@@ -163,7 +163,7 @@ class AIModelLabView {
       <!-- Interactive Suspect Simulator -->
       <div class="ai-panel mt-4">
         <div class="ai-panel-header">
-          <h3>🧪 ON-DEMAND SUSPECT INFERENCE SIMULATOR</h3>
+          <h3>${window.renderSvgIcon('flask', 'text-cyan', 18)} ON-DEMAND SUSPECT INFERENCE SIMULATOR</h3>
           <span class="badge font-mono text-cyan">LIVE MODEL INFERENCE</span>
         </div>
         <div class="ai-panel-body">
@@ -348,7 +348,7 @@ class AIModelLabView {
     if (btnRetrain) {
       btnRetrain.addEventListener('click', async () => {
         btnRetrain.disabled = true;
-        btnRetrain.innerHTML = '⏳ RETRAINING NEURAL NETWORK...';
+        btnRetrain.innerHTML = `${window.renderSvgIcon('loader', 'spin', 14)} RETRAINING NEURAL NETWORK...`;
         const res = await window.CrimeNetAPI.retrainModels();
         if (res) {
           alert(`Model Retrained Successfully! New Accuracy: ${(res.new_accuracy * 100).toFixed(1)}%`);
@@ -356,7 +356,7 @@ class AIModelLabView {
         } else {
           alert('Retrain request failed. Please check server logs.');
           btnRetrain.disabled = false;
-          btnRetrain.innerHTML = '⚡ RE-TRAIN AI MODEL LIVE';
+          btnRetrain.innerHTML = `${window.renderSvgIcon('zap', '', 14)} RE-TRAIN AI MODEL LIVE`;
         }
       });
     }
@@ -411,7 +411,7 @@ class AIModelLabView {
     if (idA === 'P016' && idB === 'P007' || idA === 'P007' && idB === 'P016') {
       explanation = `
         <div class="alert alert-danger font-mono text-xs mt-2">
-          ⭐ <strong>AI DISCOVERY: DUAL-RING BRIDGE DETECTED</strong><br>
+          ${window.renderSvgIcon('star', 'text-pink', 14)} <strong>AI DISCOVERY: DUAL-RING BRIDGE DETECTED</strong><br>
           While Priya Pillai (Narcotics Kingpin) and Anil Gupta (Fraud Kingpin) never directly exchanged calls, both maintain heavy operational density with <strong>Kunal Khan (P004)</strong>. P004 acts as the syndicates' covert bridge linchpin.
         </div>
       `;

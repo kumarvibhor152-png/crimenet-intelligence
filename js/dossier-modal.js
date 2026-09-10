@@ -29,7 +29,7 @@ window.showDossierModal = function(personId) {
           <!-- Classified Top Banner -->
           <div class="dossier-top-banner">
             <div class="banner-left">
-              <span class="dossier-shield">🛡️</span>
+              <span class="dossier-shield">${window.renderSvgIcon('shield', 'text-cyan', 26)}</span>
               <div>
                 <div class="dossier-agency">CENTRAL CRIME BRANCH • SPECIAL INVESTIGATION DIVISION</div>
                 <div class="dossier-title">OFFICIAL SUSPECT DOSSIER & THREAT INTELLIGENCE PROFILE</div>
@@ -45,7 +45,7 @@ window.showDossierModal = function(personId) {
           <div class="dossier-profile-header">
             <div class="suspect-avatar-box">
               <div class="avatar-placeholder ${isBridge ? 'avatar-bridge-glow' : ''}">
-                <span class="avatar-silhouette">${isBridge ? '⭐' : '👤'}</span>
+                <span class="avatar-silhouette">${window.renderSvgIcon('user', isBridge ? 'text-danger' : 'text-cyan', 34)}</span>
                 <span class="avatar-tag">${p.person_id}</span>
               </div>
               <div class="threat-meter">
@@ -63,20 +63,20 @@ window.showDossierModal = function(personId) {
               <div class="suspect-title-row">
                 <h2>${p.name.toUpperCase()}</h2>
                 <div class="status-badges">
-                  ${isBridge ? '<span class="badge badge-pink">⭐ CRITICAL DUAL-RING BRIDGE</span>' : ''}
-                  ${p.ringRole === 'NARCO_KINGPIN' ? '<span class="badge badge-emerald">👑 NARCOTICS KINGPIN</span>' : ''}
-                  ${p.ringRole === 'FRAUD_KINGPIN' ? '<span class="badge badge-danger">👑 FRAUD KINGPIN</span>' : ''}
-                  ${isAbsconding ? '<span class="badge badge-danger">⚠️ ABSCONDING / FUGITIVE</span>' : ''}
-                  ${isConvicted ? '<span class="badge badge-amber">⚖️ CONVICTED</span>' : ''}
-                  ${isSmurfing ? '<span class="badge badge-purple">💸 HAWALA / SMURFING LINK</span>' : ''}
-                  ${isLateNight ? '<span class="badge badge-dark">🌙 LATE-NIGHT OPERATIVE</span>' : ''}
+                  ${isBridge ? `<span class="badge badge-danger">${window.renderSvgIcon('alertTriangle', '', 12)} PRIMARY CROSS-CARTEL CONDUIT</span>` : ''}
+                  ${p.ringRole === 'NARCO_KINGPIN' ? `<span class="badge badge-emerald">${window.renderSvgIcon('crown', '', 12)} ACCUSED - NARCOTICS KINGPIN</span>` : ''}
+                  ${p.ringRole === 'FRAUD_KINGPIN' ? `<span class="badge badge-danger">${window.renderSvgIcon('crown', '', 12)} ACCUSED - FRAUD KINGPIN</span>` : ''}
+                  ${isAbsconding ? `<span class="badge badge-danger">${window.renderSvgIcon('alertTriangle', '', 12)} ABSCONDING FUGITIVE</span>` : ''}
+                  ${isConvicted ? `<span class="badge badge-amber">${window.renderSvgIcon('scale', '', 12)} CONVICTED ACCUSED</span>` : ''}
+                  ${isSmurfing ? `<span class="badge badge-purple">${window.renderSvgIcon('dollarSign', '', 12)} SECTION 12 PMLA SMURFING NEXUS</span>` : ''}
+                  ${isLateNight ? `<span class="badge badge-dark">${window.renderSvgIcon('moon', '', 12)} NOCTURNAL TELECOM OPERATIVE</span>` : ''}
                 </div>
               </div>
 
               <!-- Live AI Model Prediction Banner -->
               <div class="ai-dossier-prediction-banner">
                 <div class="ai-pred-left">
-                  <span class="ai-chip-tag">🧠 PYTORCH AI INFERENCE</span>
+                  <span class="ai-chip-tag">${window.renderSvgIcon('brain', '', 14)} PYTORCH AI INFERENCE</span>
                   <div class="ai-role-text">
                     PREDICTED ROLE: <strong class="${(p.ai_predicted_role || '').includes('Kingpin') || (p.ai_predicted_role || '').includes('Linchpin') ? 'text-danger' : 'text-cyan'}">${(p.ai_predicted_role || p.ringRole || 'Low-Risk Associate').toUpperCase()}</strong>
                     <span class="ai-conf-pill font-mono">${((p.ai_confidence || 0.988) * 100).toFixed(1)}% CONF</span>
@@ -89,9 +89,9 @@ window.showDossierModal = function(personId) {
 
               ${isBridge ? `
                 <div class="bridge-intel-banner">
-                  <strong>⭐ HIDDEN SYNDICATE LINCHPIN IDENTIFIED:</strong>
-                  Kunal Khan operates as the sole link between the Narcotics Ring (Kingpin P016 Priya Pillai) and the Fraud Ring (Kingpin P007 Anil Gupta). 
-                  He is deliberately omitted as co-accused on joint FIRs to avoid police association, but is linked via Hawala structuring and physical surveillance sightings (SR3019 & SR3020).
+                  <strong>${window.renderSvgIcon('alertTriangle', 'text-danger', 14)} INVESTIGATION FINDING: PRIMARY CROSS-CARTEL CONDUIT</strong><br>
+                  Kunal Khan operates as the sole verified nexus joining the Narcotics Trafficking Ring (Kingpin P016 Priya Pillai) and the Financial Fraud Ring (Kingpin P007 Anil Gupta). 
+                  He was deliberately omitted from joint FIR chargesheets to avoid police association, but is linked via Hawala structuring and physical surveillance intercepts (SR3019 & SR3020).
                 </div>
               ` : ''}
 
@@ -145,7 +145,7 @@ window.showDossierModal = function(personId) {
 
           <!-- Criminal FIR History -->
           <div class="dossier-subpanel">
-            <h4 class="subpanel-title">⚖️ CHARGESHEET & PRIOR CRIMINAL FIR CASES (${p.firs.length})</h4>
+            <h4 class="subpanel-title">${window.renderSvgIcon('scale', 'text-amber', 18)} CHARGESHEET & PRIOR CRIMINAL FIR CASES (${p.firs.length})</h4>
             ${p.firs.length > 0 ? `
               <table class="tactical-table">
                 <thead>
@@ -177,7 +177,7 @@ window.showDossierModal = function(personId) {
 
           <!-- Physical Surveillance Sightings -->
           <div class="dossier-subpanel">
-            <h4 class="subpanel-title">👁️ PHYSICAL SURVEILLANCE & RENDEZVOUS SIGHTINGS (${p.surveillanceSightings.length})</h4>
+            <h4 class="subpanel-title">${window.renderSvgIcon('eye', 'text-cyan', 18)} PHYSICAL SURVEILLANCE & RENDEZVOUS SIGHTINGS (${p.surveillanceSightings.length})</h4>
             ${p.surveillanceSightings.length > 0 ? `
               <div class="surveillance-feed-mini">
                 ${p.surveillanceSightings.map(sr => `
@@ -197,7 +197,7 @@ window.showDossierModal = function(personId) {
           <!-- Intercepted OSINT Social Media Posts -->
           ${p.socialPosts.length > 0 ? `
             <div class="dossier-subpanel">
-              <h4 class="subpanel-title">📱 INTERCEPTED OSINT SOCIAL MEDIA POSTS (${p.socialPosts.length})</h4>
+              <h4 class="subpanel-title">${window.renderSvgIcon('messageSquare', 'text-purple', 18)} INTERCEPTED OSINT SOCIAL MEDIA POSTS (${p.socialPosts.length})</h4>
               <div class="social-posts-mini">
                 ${p.socialPosts.map(sp => `
                   <div class="social-mini-card">
@@ -215,7 +215,7 @@ window.showDossierModal = function(personId) {
 
           <!-- Known Criminal Associates -->
           <div class="dossier-subpanel">
-            <h4 class="subpanel-title">🔗 CLOSEST NETWORK ASSOCIATES & TELECOM TIES (${topContacts.length})</h4>
+            <h4 class="subpanel-title">${window.renderSvgIcon('link', 'text-cyan', 18)} CLOSEST NETWORK ASSOCIATES & TELECOM TIES (${topContacts.length})</h4>
             <div class="associates-list">
               ${topContacts.map(c => `
                 <div class="associate-chip" onclick="window.showDossierModal('${c.person_id}')">
@@ -231,16 +231,19 @@ window.showDossierModal = function(personId) {
           <!-- Action Buttons -->
           <div class="dossier-action-bar">
             <div class="action-left">
+              <button class="btn btn-cyan" onclick="document.getElementById('dossierModal').remove(); if(window.suspectDigger) window.suspectDigger.selectSuspect('${p.person_id}');">
+                ${window.renderSvgIcon('search', '', 14)} Deep-Dive Suspect Intel
+              </button>
               <button class="btn btn-outline-cyan" onclick="window.locateSuspectOnMap('${p.person_id}')">
-                📍 Track on Tactical GIS Map
+                ${window.renderSvgIcon('mapPin', '', 14)} Track on Tactical GIS Map
               </button>
               <button class="btn btn-outline-purple" onclick="window.locateSuspectInGraph('${p.person_id}')">
-                🕸️ Center in Network Graph
+                ${window.renderSvgIcon('network', '', 14)} Center in Network Graph
               </button>
             </div>
             <div class="action-right">
               <button class="btn btn-primary" onclick="window.print()">
-                🖨️ Print Dossier PDF
+                ${window.renderSvgIcon('printer', '', 14)} Print Dossier PDF
               </button>
               <button class="btn btn-secondary" onclick="document.getElementById('dossierModal').remove()">
                 Close

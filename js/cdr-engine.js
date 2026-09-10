@@ -87,7 +87,7 @@ class CDREngine {
         <div class="panel-section">
           <div class="panel-header">
             <div class="panel-title">
-              <span class="icon">📊</span> 24-HOUR TELECOM TEMPORAL DENSITY HISTOGRAM
+              <span class="icon">${window.renderSvgIcon('barChart2', 'text-cyan', 18)}</span> 24-HOUR TELECOM TEMPORAL DENSITY HISTOGRAM
             </div>
             <div class="panel-hint text-xs text-muted">
               Red markers indicate anomalous late-night operational window
@@ -116,7 +116,7 @@ class CDREngine {
         <div class="panel-section">
           <div class="panel-header">
             <div class="panel-title">
-              <span class="icon">👥</span> HIGH-FREQUENCY CALL CLUSTERS (FREQUENT CALLER PAIRS)
+              <span class="icon">${window.renderSvgIcon('users', 'text-cyan', 18)}</span> HIGH-FREQUENCY CALL CLUSTERS (FREQUENT CALLER PAIRS)
             </div>
           </div>
 
@@ -138,7 +138,7 @@ class CDREngine {
                   <div class="pair-meta">
                     <div>Cumulative Airtime: <strong class="text-slate">${Math.round(p.totalSec / 60)} mins</strong></div>
                     <div>Active Towers: <strong class="text-muted">${Array.from(p.cities).join(', ')}</strong></div>
-                    ${p.hasLateNight ? '<div class="text-danger text-xs font-bold">⚠️ Regular Midnight Coordination Window</div>' : ''}
+                    ${p.hasLateNight ? `<div class="text-danger text-xs font-bold">${window.renderSvgIcon('alertTriangle', '', 12)} Regular Midnight Coordination Window</div>` : ''}
                   </div>
                 </div>
               `;
@@ -150,7 +150,7 @@ class CDREngine {
         <div class="panel-section">
           <div class="panel-header">
             <div class="panel-title">
-              <span class="icon">📑</span> TELECOMMUNICATION INTERCEPT LOGS
+              <span class="icon">${window.renderSvgIcon('fileText', 'text-cyan', 18)}</span> TELECOMMUNICATION INTERCEPT LOGS
             </div>
             <div class="ledger-filters">
               <button class="btn-filter ${this.currentFilter === 'ALL' ? 'active' : ''}" onclick="window.cdrEngineInstance.setFilter('ALL')">All Calls</button>
@@ -195,7 +195,7 @@ class CDREngine {
                       <td><span class="city-tag">${c.cell_tower_city}</span></td>
                       <td>
                         ${isLateNight 
-                          ? '<span class="badge badge-danger">🌙 LATE-NIGHT CALL</span>' 
+                          ? `<span class="badge badge-danger">${window.renderSvgIcon('moon', '', 12)} LATE-NIGHT CALL</span>` 
                           : '<span class="badge badge-muted">STANDARD INTERCEPT</span>'}
                       </td>
                     </tr>

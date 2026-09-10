@@ -43,7 +43,7 @@ class TacticalGISMap {
     const towers = CITY_COORDINATES;
     const towerIcon = L.divIcon({
       className: 'tactical-tower-marker',
-      html: `<div class="tower-beacon"><div class="beacon-pulse"></div><span class="tower-icon">📡</span></div>`,
+      html: `<div class="tower-beacon"><div class="beacon-pulse"></div><span class="tower-icon">${window.renderSvgIcon('radio', '', 14)}</span></div>`,
       iconSize: [30, 30],
       iconAnchor: [15, 15]
     });
@@ -93,7 +93,7 @@ class TacticalGISMap {
       marker.bindPopup(`
         <div class="tactical-popup">
           <div class="popup-badge ${isBridge ? 'badge-danger' : isAbsconding ? 'badge-danger' : 'badge-info'}">
-            ${isBridge ? '⭐ DUAL-RING HIDDEN BRIDGE' : isAbsconding ? '⚠️ ACTIVE FUGITIVE' : 'SUSPECT PROFILE'}
+            ${isBridge ? `${window.renderSvgIcon('star', '', 12)} DUAL-RING HIDDEN BRIDGE` : isAbsconding ? `${window.renderSvgIcon('alertTriangle', '', 12)} ACTIVE FUGITIVE` : 'SUSPECT PROFILE'}
           </div>
           <h4>${p.name} (${p.person_id})</h4>
           <p><strong>Base City:</strong> ${p.home_city}</p>
@@ -128,7 +128,7 @@ class TacticalGISMap {
         className: 'tactical-surveillance-marker',
         html: `
           <div class="surveillance-pin ${isSmokingGun ? 'pin-smoking-gun' : ''}">
-            <span>${isSmokingGun ? '⭐' : '👁️'}</span>
+            <span>${isSmokingGun ? window.renderSvgIcon('star', 'text-pink', 14) : window.renderSvgIcon('eye', 'text-cyan', 14)}</span>
           </div>
         `,
         iconSize: [24, 24],
@@ -139,7 +139,7 @@ class TacticalGISMap {
       marker.bindPopup(`
         <div class="tactical-popup">
           <div class="popup-badge ${isSmokingGun ? 'badge-danger' : 'badge-amber'}">
-            ${isSmokingGun ? '🚨 SMOKING GUN PHYSICAL INTERCEPT' : 'FIELD SURVEILLANCE REPORT'}
+            ${isSmokingGun ? `${window.renderSvgIcon('siren', '', 12)} SMOKING GUN PHYSICAL INTERCEPT` : `${window.renderSvgIcon('eye', '', 12)} FIELD SURVEILLANCE REPORT`}
           </div>
           <h4>REPORT ${sr.report_id} (${sr.location_city})</h4>
           <p><strong>Date:</strong> ${sr.date}</p>
